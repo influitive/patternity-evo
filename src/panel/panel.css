@@ -1,0 +1,54 @@
+$transition-in-time: 0.5s;
+$transition-out-time: 0.5s;
+
+.panel {
+  margin-bottom: 1px;
+  /* We can only hash the top level classname when we're using react-bootstrap */
+  :global { 
+    .panel-heading {
+      background-color: #ccc;
+      color: #333;
+      cursor: pointer;
+      &:hover {
+        background-color: #e2e2e2;
+        transition: background-color $transition-out-time ease-in-out;
+      }
+      &:hover + .section-details {
+        border-color: #e2e2e2;
+      }
+    }
+    .panel-body {
+      list-style-type: none;
+      border: 1px solid #ccc;
+      padding: $spacing-large;
+    }
+    .panel-title {
+      margin: 0;
+      a {
+        padding: 10px;
+        display: block;
+        font-size: 1.1em;
+        overflow: hidden;
+        margin: 0;
+        font-weight: normal;
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+    .collapse {
+      display: none;
+    }
+    .collapse.in {
+      display: block;
+    }
+    .collapsing {
+      position: relative;
+      height: 0;
+      overflow: hidden;
+      transition-timing-function: ease;
+      transition-duration: .35s;
+      transition-property: height, visibility;
+    }
+  }
+}
+
