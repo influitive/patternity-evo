@@ -51,6 +51,6 @@
 
 
 
-        "filenames/filenames": [2, "^[a-z-]+$"]
+        "filenames/filenames": [2, "^[a-z-\.]+$"]
     }
 }

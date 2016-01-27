@@ -1,0 +1,14 @@
+.btn {
+  font-size: 50px;
+  background-color: white;
+}
+
+.btn-default {
+  composes: btn;
+  background-color: $theme-color-primary;
+
+  @media(width < 600px) {
+    background-color: red;
+  }
+}
+
