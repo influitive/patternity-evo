@@ -18,13 +18,7 @@ devcard(
   * link
   `,
   <div style={{textAlign: 'center'}}>
-    <Button type="default">default</Button>
-    <Button type="primary">primary</Button>
-    <Button type="success">success</Button>
-    <Button type="info">info</Button>
-    <Button type="warning">warning</Button>
-    <Button type="danger">danger</Button>
-    <Button type="link">link</Button>
+    buttons go here
   </div>
 );
 
