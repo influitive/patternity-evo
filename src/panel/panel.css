@@ -3,7 +3,7 @@ $transition-out-time: 0.5s;
 
 .panel {
   margin-bottom: 1px;
-  :global {
+  :global { // We can only hash the top level class from react-bootstrap
     .panel-heading {
       background-color: #ccc;
       color: #333;

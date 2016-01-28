@@ -2,6 +2,7 @@ const nested = require('postcss-nested');
 const vars = require('postcss-simple-vars');
 const media = require('postcss-media-minmax');
 const atImport = require('postcss-import');
+const postCSSInlineComment = require('postcss-inline-comment');
 
 function variables() { 
   return require('../src/shared/vars');
@@ -14,6 +15,6 @@ module.exports = {
     ]
   },
   postcss: function() {
-    return [atImport, vars({ variables: variables }), nested, media]
+    return [atImport, vars({ variables: variables }), nested, media, postCSSInlineComment]
   }
 };

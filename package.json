@@ -36,6 +36,7 @@
     "express": "^4.13.4",
     "file-loader": "^0.8.5",
     "postcss-import": "^8.0.2",
+    "postcss-inline-comment": "^2.0.0",
     "postcss-loader": "^0.8.0",
     "postcss-media-minmax": "^2.1.1",
     "postcss-nested": "^1.0.0",
