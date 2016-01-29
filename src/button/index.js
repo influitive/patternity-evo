@@ -1,6 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
+import styles from './button.css';
+
+import { ThemeComponent } from '../themeable';
+import mapping from './theme';
+
 export class Button extends Component {
   static propTypes = {
     icon:      PropTypes.string,
@@ -35,9 +40,10 @@ export class Button extends Component {
 
   getClasses = () => {
     const { disabled, inverse, type, children, classList, icon } = this.props;
+    const { classes } = this.props.sheet;
 
     return classNames(
-      'button',
+      styles.btn,
       !disabled && type,
       {
         disabled:   disabled,
@@ -47,9 +53,10 @@ export class Button extends Component {
       !disabled && {
         inverse: (type === 'secondary' || type === 'text') && inverse
       },
-      classList
+      classList,
+      classes[type]
     );
   };
 }
 
-export default Button;
+export default ThemeComponent(Button, mapping);

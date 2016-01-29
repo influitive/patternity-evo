@@ -1,12 +1,12 @@
 {
-  "name": "patternity-rewrite",
+  "name": "patternity-evo",
   "version": "0.0.1",
   "description": "Component Library for Influitive",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src -d lib",
-    "server": "kotatsu serve -c example/webpack.config.js --progress --devtool \\#eval-source-map --babel example/index.js"
+    "test": "echo installed",
+    "build": "rm -rf lib && gulp --silent && babel --quiet src -d lib",
+    "start": "kotatsu serve -c example/webpack.config.js --progress --devtool \\#eval-source-map --babel example/index.js"
   },
   "keywords": [
     "React",
@@ -18,7 +18,11 @@
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "^6.3.19",
-    "react-bootstrap": "^0.28.2"
+    "color": "^0.11.1",
+    "jss": "^3.2.0",
+    "jss-nested": "^1.0.1",
+    "react-bootstrap": "^0.28.2",
+    "react-jss": "^2.0.1"
   },
   "devDependencies": {
     "babel": "^6.3.26",
@@ -28,6 +32,7 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-react-hmre": "^1.0.1",
     "babel-preset-stage-0": "^6.3.13",
+    "babel-register": "^6.4.3",
     "css-loader": "^0.23.1",
     "devcards": "git://github.com/glenjamin/devcards-js.git",
     "eslint": "^1.10.3",
@@ -35,6 +40,11 @@
     "eslint-plugin-react": "^3.16.1",
     "express": "^4.13.4",
     "file-loader": "^0.8.5",
+    "glob": "^6.0.4",
+    "glob-fs": "^0.1.6",
+    "gulp": "^3.9.0",
+    "gulp-postcss": "^6.0.1",
+    "postcss-functions": "^2.1.0",
     "postcss-import": "^8.0.2",
     "postcss-loader": "^0.8.0",
     "postcss-media-minmax": "^2.1.1",

@@ -1,7 +1,6 @@
 $transition-in-time: 0.5s;
 $transition-out-time: 0.5s;
 
-
 .accordion {
   padding: 0;
 
@@ -10,6 +9,11 @@ $transition-out-time: 0.5s;
       margin-bottom: 1px;
       list-style-type: none;
     }
+
+    .bob {
+      flex-direction: row;
+    }
+
     .section-heading {
       background-color: #ccc;
       font-size: 1.1em;
@@ -19,14 +23,17 @@ $transition-out-time: 0.5s;
       padding: 10px;
       color: #333;
       cursor: pointer;
+
       &:hover {
         background-color: #e2e2e2;
         transition: background-color $transition-out-time ease-in-out;
       }
+
       &:hover + .section-details {
         border-color: #e2e2e2;
       }
     }
+
     .section-details {
       border: 1px solid #ccc;
       max-height: 0;
@@ -35,5 +42,3 @@ $transition-out-time: 0.5s;
     }
   }
 }
-
-

@@ -1,11 +1,8 @@
-const nested = require('postcss-nested');
-const vars = require('postcss-simple-vars');
-const media = require('postcss-media-minmax');
-const atImport = require('postcss-import');
+require('babel-register')({
+  only: /colors\.js/
+});
 
-function variables() { 
-  return require('../src/shared/vars');
-}
+const postcssPlugins = require('../postcss.config');
 
 module.exports = {
   module: {
@@ -14,6 +11,6 @@ module.exports = {
     ]
   },
   postcss: function() {
-    return [atImport, vars({ variables: variables }), nested, media]
+    return postcssPlugins;
   }
 };
