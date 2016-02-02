@@ -1,4 +1,4 @@
-const context = require.context('../src/', true, /\.card\.js$/);
+const context = require.context('../src/', true, /card\.js$/);
 context.keys().forEach(function(moduleName) {
   context(moduleName);
 });
