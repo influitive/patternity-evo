@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test:watch": "nodemon --quiet --exec \"npm run --silent test\" --watch src",
-    "test:ci": "BABEL_ENV=test babel-tape-runner \"src/**/*/*.test.js\" | tap-dot",
+    "test:ci": "BABEL_ENV=test babel-tape-runner \"src/**/*/*test.js\" | tap-dot",
     "ci": "npm run test:ci && npm run lint",
-    "test": "BABEL_ENV=test babel-tape-runner \"src/**/*/*.test.js\" | tap-spec",
+    "test": "BABEL_ENV=test babel-tape-runner \"src/**/*/*test.js\" | tap-spec",
     "build": "rm -rf lib && gulp --silent && babel --quiet src -d lib",
     "start": "kotatsu serve -c example/webpack.config.js --progress --devtool \\#eval-source-map --babel example/index.js & npm run test:watch",
     "lint": "eslint ."
