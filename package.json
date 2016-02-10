@@ -48,7 +48,7 @@
     "file-loader": "0.8.5",
     "glob": "7.0.0",
     "glob-fs": "0.1.6",
-    "gulp": "3.9.0",
+    "gulp": "3.9.1",
     "gulp-postcss": "6.1.0",
     "isparta": "4.0.0",
     "kotatsu": "0.9.1",
