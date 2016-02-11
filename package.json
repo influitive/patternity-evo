@@ -40,7 +40,7 @@
     "babel-tape-runner": "2.0.0",
     "css-loader": "0.23.1",
     "devcards": "git://github.com/glenjamin/devcards-js.git",
-    "enzyme": "1.5.0",
+    "enzyme": "1.6.0",
     "eslint": "1.10.3",
     "eslint-plugin-filenames": "0.2.0",
     "eslint-plugin-react": "3.16.1",
