@@ -29,7 +29,7 @@
     "react-jss": "2.0.1"
   },
   "devDependencies": {
-    "babel": "6.5.1",
+    "babel": "6.5.2",
     "babel-cli": "6.5.1",
     "babel-eslint": "4.1.8",
     "babel-preset-es2015": "6.5.0",
