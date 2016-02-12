@@ -10,7 +10,7 @@
     "ci": "npm run test:ci && npm run lint",
     "test": "BABEL_ENV=test babel-tape-runner \"src/**/*/*test.js\" | tap-spec",
     "build": "rm -rf lib && gulp --silent && babel --quiet src -d lib",
-    "publish": "npm run build && npm publish",
+    "pub": "npm run build && npm publish",
     "start": "kotatsu serve -c example/webpack.config.js --progress --devtool \\#eval-source-map --babel example/index.js & npm run test:watch",
     "lint": "eslint ."
   },
