@@ -12,9 +12,6 @@ coverage
 # node-waf configuration
 .lock-wscript
 
-# Compiled library
-lib
-
 # Dependency directory
 node_modules
 
