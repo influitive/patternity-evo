@@ -305,8 +305,7 @@
 }
 .Select--multi .Select-value-icon:hover,
 .Select--multi .Select-value-icon:focus {
-  background-color: rgba(0, 113, 230, 0.08);
-  color: #0071e6;
+  background-color: darken($lighter-gray, .1);
 }
 .Select--multi .Select-value-icon:active {
   background-color: $dark-gray;
