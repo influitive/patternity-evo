@@ -1,5 +1,6 @@
 {
   "name": "patternity-evo",
+  "repository": "https://github.com/influitive/patternity-evo",
   "version": "0.0.1",
   "description": "Component Library for Influitive",
   "main": "index.js",
@@ -9,6 +10,7 @@
     "ci": "npm run test:ci && npm run lint",
     "test": "BABEL_ENV=test babel-tape-runner \"src/**/*/*test.js\" | tap-spec",
     "build": "rm -rf lib && gulp --silent && babel --quiet src -d lib",
+    "prepublish": "npm run build",
     "start": "kotatsu serve -c example/webpack.config.js --progress --devtool \\#eval-source-map --babel example/index.js & npm run test:watch",
     "lint": "eslint ."
   },
@@ -26,7 +28,8 @@
     "jss": "3.3.0",
     "jss-nested": "1.0.2",
     "react-bootstrap": "0.28.3",
-    "react-jss": "2.0.1"
+    "react-jss": "2.0.1",
+    "react-select": "^1.0.0-beta8"
   },
   "devDependencies": {
     "babel": "6.5.1",
@@ -52,6 +55,7 @@
     "gulp-postcss": "6.1.0",
     "isparta": "4.0.0",
     "kotatsu": "0.9.1",
+    "mocha": "^2.4.5",
     "postcss-functions": "2.1.0",
     "postcss-import": "8.0.2",
     "postcss-loader": "0.8.0",

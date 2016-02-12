@@ -6,7 +6,7 @@ module.exports = {
   'success-color': '#8BC540',
   'error-color': '#c54040',
   'warning-color': '#ffcc00',
-  'dark-grey': '#666666',
+  'dark-gray': '#666666',
   'medium-gray': '#969696',
   'light-gray': '#d0d2d3',
   'lighter-gray': '#eeeeee',
