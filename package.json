@@ -52,7 +52,7 @@
     "gulp": "3.9.1",
     "gulp-postcss": "6.1.0",
     "isparta": "4.0.0",
-    "kotatsu": "^0.10.0",
+    "kotatsu": "^0.12.1",
     "mocha": "^2.4.5",
     "nodemon": "^1.8.1",
     "postcss-functions": "2.1.0",
