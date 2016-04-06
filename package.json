@@ -27,7 +27,7 @@
     "jss": "3.3.0",
     "jss-nested": "1.0.3",
     "react-bootstrap": "0.28.3",
-    "react-jss": "2.0.1",
+    "react-jss": "2.0.4",
     "react-select": "^1.0.0-beta8"
   },
   "devDependencies": {
