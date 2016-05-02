@@ -1,10 +1,10 @@
 /*eslint max-len: 0*/
-import devcards from 'devcards';
+import devboard from 'devboard';
 import React from 'react';
 import Accordion from './index.js';
 import Panel from '../panel';
 
-const devcard = devcards.ns('accordion');
+const devcard = devboard.ns('accordion');
 
 devcard(
   'Accordion',

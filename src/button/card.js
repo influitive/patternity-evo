@@ -1,8 +1,8 @@
-import devcards from 'devcards';
+import devboard from 'devboard';
 import React, { Component } from 'react';
 import Button from './index.js';
 
-const devcard = devcards.ns('buttons');
+const devcard = devboard.ns('buttons');
 
 devcard(
   'Buttons',

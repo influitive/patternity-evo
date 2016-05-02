@@ -1,7 +1,7 @@
-import devcards from 'devcards';
+import devboard from 'devboard';
 import React, { Component } from 'react';
 
-const devcard = devcards.ns('react-select');
+const devcard = devboard.ns('react-select');
 
 import Select from './';
 

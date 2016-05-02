@@ -28,7 +28,8 @@
     "jss-nested": "1.0.3",
     "react-bootstrap": "0.28.3",
     "react-jss": "2.0.1",
-    "react-select": "^1.0.0-beta8"
+    "react-select": "^1.0.0-beta8",
+    "react-tether": "^0.5.1"
   },
   "devDependencies": {
     "babel-cli": "6.5.1",
@@ -40,7 +41,7 @@
     "babel-register": "6.5.2",
     "babel-tape-runner": "2.0.1",
     "css-loader": "0.23.1",
-    "devcards": "git://github.com/glenjamin/devcards-js.git",
+    "devboard": "^0.5.0",
     "enzyme": "2.0.0",
     "eslint": "2.5.2",
     "eslint-plugin-filenames": "0.2.0",
