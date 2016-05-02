@@ -50,7 +50,7 @@
     "glob": "7.0.3",
     "glob-fs": "0.1.6",
     "gulp": "3.9.1",
-    "gulp-postcss": "6.1.0",
+    "gulp-postcss": "6.1.1",
     "isparta": "4.0.0",
     "kotatsu": "^0.10.0",
     "mocha": "^2.4.5",
