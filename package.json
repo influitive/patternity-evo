@@ -24,7 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "color": "0.11.1",
-    "jss": "3.3.0",
+    "jss": "3.11.0",
     "jss-nested": "1.0.3",
     "react-bootstrap": "0.28.3",
     "react-jss": "2.0.1",
