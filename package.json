@@ -42,7 +42,7 @@
     "babel-tape-runner": "2.0.1",
     "css-loader": "0.23.1",
     "devboard": "^0.5.0",
-    "enzyme": "2.0.0",
+    "enzyme": "2.3.0",
     "eslint": "2.5.2",
     "eslint-plugin-filenames": "0.2.0",
     "eslint-plugin-react": "4.2.3",
