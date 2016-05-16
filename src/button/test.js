@@ -18,6 +18,6 @@ test('button', t => {
     <div>Goodbye</div>
   ];
 
-  t.deepEqual(wrapper2.props().children, expectedChildren, 'should render children');
+  t.deepEqual(wrapper2.props().children[1], expectedChildren, 'should render children');
   t.end();
 });

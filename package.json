@@ -25,6 +25,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "color": "0.11.1",
+    "infl-icons": "git://github.com/influitive/infl-icons.git",
     "jss": "3.3.0",
     "jss-nested": "1.0.3",
     "react-bootstrap": "0.28.3",

@@ -18,10 +18,10 @@ devcard(
   * default
   `,
   <div style={{textAlign: 'center'}}>
-    <Button type="primary">Primary</Button>
-    <Button type="Secondary">Secondary</Button>
+    <Button type="primary" icon="speech">Primary</Button>
+    <Button type="secondary" disabled={true}>Secondary</Button>
     <Button type="important">Important</Button>
-    <Button type="Success">Success</Button>
+    <Button type="success">Success</Button>
     <Button type="danger">Danger</Button>
     <Button type="text">Text</Button>
     <Button>Default</Button>
@@ -47,11 +47,11 @@ devcard(
   `,
   <Container>
     <Button type="primary">Primary</Button>
-    <Button type="Secondary">Secondary</Button>
+    <Button type="secondary">Secondary</Button>
     <Button type="important">Important</Button>
-    <Button type="Success">Success</Button>
+    <Button type="success">Success</Button>
     <Button type="danger">Danger</Button>
-    <Button type="text">Text</Button>
+    <Button type="text" inverse={true}>Text</Button>
     <Button>Default</Button>
   </Container>,
 );

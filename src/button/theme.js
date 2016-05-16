@@ -5,12 +5,20 @@ export default function(theme) {
 
   return {
     primary: {
-      'background-color': themeColorPrimary + ' !important',
-      'border-color': darken(themeColorPrimary, .1) + ' !important',
-      'box-shadow': `0px 2px ${darken(themeColorPrimary, .25)} !important`,
+      'background-color': themeColorPrimary,
+      'border-color': darken(themeColorPrimary, .1),
+      'box-shadow': `0px 2px ${darken(themeColorPrimary, .25)}`,
       '&:hover': {
-        'background-color': lighten(themeColorPrimary, .1) + ' !important',
-        'box-shadow': `0px 2px ${themeColorPrimary} !important`
+        'background-color': lighten(themeColorPrimary, .1),
+        'box-shadow': `0px 2px ${themeColorPrimary}`
+      }
+    },
+    secondary: {
+      'border-color': themeColorPrimary,
+      'color': themeColorPrimary,
+      '&:hover': {
+        'border-color': darken(themeColorPrimary, 0.2),
+        'color': darken(themeColorPrimary, 0.2),
       }
     }
   };
