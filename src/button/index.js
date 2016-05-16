@@ -3,13 +3,14 @@ import classNames from 'classnames';
 
 import styles from './button.css';
 
+import { Icon } from 'infl-icons';
 import { ThemeComponent } from '../themeable';
 import mapping from './theme';
 
 export class Button extends Component {
   static propTypes = {
     icon:      PropTypes.string,
-    type:      PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text', '']),
+    type:      PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text', 'default']),
     onClick:   PropTypes.func,
     disabled:  PropTypes.bool,
     inverse:   PropTypes.bool,
@@ -20,11 +21,13 @@ export class Button extends Component {
   };
 
   static defaultProps = {
+    icon:      '',
     disabled:  false,
     inverse:   false,
     isSubmit:  false,
     classList: null,
-    sheet: { classes: {} }
+    sheet: { classes: {} },
+    type:  'default'
   };
 
   render() {
@@ -32,31 +35,48 @@ export class Button extends Component {
 
     return <button type={isSubmit ? 'submit' : 'button'}
       disabled={disabled}
-      className={this.getClasses()}
+      className={this._getClasses()}
       onClick={onClick}>
+      { this._hasIcon() }
       {children}
     </button>;
   }
 
-  getClasses = () => {
-    const { disabled, inverse, type, children, classList, icon } = this.props;
+  _getClasses = () => {
+    const { disabled, classList, type } = this.props;
     const { classes } = this.props.sheet;
 
     return classNames(
-      styles.btn,
-      !disabled && type,
+      styles[this._determineButtonClass()],
       {
-        disabled:   disabled,
-        iconButton: children && children.length === 0
-      },
-      icon && 'ic ic-' + icon,
-      !disabled && {
-        inverse: (type === 'secondary' || type === 'text') && inverse
+        disabled:   disabled
       },
       classList,
       classes[type]
     );
   };
+
+  _determineButtonClass = () => {
+    const { disabled, inverse, type } = this.props;
+
+    if(disabled) return 'disabled';
+
+    if((type === 'secondary' || type === 'text') && inverse) {
+      return type + 'Inverse';
+    }
+
+    return type;
+  }
+
+  _hasIcon = () => {
+    if(this.props.icon === '') return null;
+
+    return (
+      <span className={styles.icon}>
+        <Icon icon={this.props.icon} />
+      </span>
+    );
+  }
 }
 
 export default ThemeComponent(Button, mapping);

@@ -41,6 +41,10 @@ module.exports = {
   'spacing-xxsmall': '0.1rem',
   'spacing-large': '1.5rem',
   'spacing-xlarge': '2rem',
-  'spacing-xxlarge': '2.5rem'
-};
+  'spacing-xxlarge': '2.5rem',
 
+  // Card specific
+  'card-border-color': '#b5b5b5',
+  'card-shadow-color': '#d2d2d2'
+
+};
