@@ -11,15 +11,21 @@
   text-decoration: none;
   transition: background-color 0.15s ease-in-out;
   white-space: nowrap;
-}
 
-.button:focus {
-  outline: none;
-}
+  &:hover,
+  &:active {
+    text-decoration: none;
+    cursor: pointer;
+  }
 
-.icon {
-  span:before {
-    vertical-align: bottom;
+  &:focus {
+    outline: none;
+  }
+
+  .icon {
+    span:before {
+      vertical-align: bottom;
+    }
   }
 }
 
@@ -28,14 +34,12 @@
   background-color: $lighter-gray;
   box-shadow: 0px 2px darken($lighter-gray, 0.1);
   color: $dark-gray;
-}
 
-.default:hover,
-.default:active {
-  text-decoration: none;
-  cursor: pointer;
-  background-color: lighten($lighter-gray, 0.04);
-  box-shadow: 0px 2px $lighter-gray;
+  &:hover,
+  &:active {
+    background-color: lighten($lighter-gray, 0.04);
+    box-shadow: 0px 2px $lighter-gray;
+  }
 }
 
 .primary {
@@ -44,18 +48,12 @@
   border-color: darken($theme-color-primary, 0.1);
   box-shadow: 0px 2px darken($theme-color-primary, 0.1);
   color: white;
-}
 
-.primary:hover,
-.primary:active {
-  text-decoration: none;
-  cursor: pointer;
-  background-color: lighten($theme-color-primary, 0.05);
-  box-shadow: 0px 2px $theme-color-primary;
-}
-
-.primary:focus {
-  outline: none;
+  &:hover,
+  &:active {
+    background-color: lighten($theme-color-primary, 0.05);
+    box-shadow: 0px 2px $theme-color-primary;
+  }
 }
 
 .success {
@@ -64,18 +62,12 @@
   border-color: darken($success-color, 0.1);
   box-shadow: 0px 2px darken($success-color, 0.1);
   color: white;
-}
 
-.success:hover,
-.success:active {
-  text-decoration: none;
-  cursor: pointer;
-  background-color: lighten($success-color, 0.1);
-  box-shadow: 0px 2px $success-color;
-}
-
-.success:focus {
-  outline: none;
+  &:hover,
+  &:active {
+    background-color: lighten($success-color, 0.1);
+    box-shadow: 0px 2px $success-color;
+  }
 }
 
 .danger {
@@ -84,18 +76,12 @@
   border-color: darken($error-color, 0.1);
   box-shadow: 0px 2px darken($error-color, 0.1);
   color: white;
-}
 
-.danger:hover,
-.danger:active {
-  text-decoration: none;
-  cursor: pointer;
-  background-color: lighten($error-color, 0.1);
-  box-shadow: 0px 2px $error-color;
-}
-
-.danger:focus {
-  outline: none;
+  &:hover,
+  &:active {
+    background-color: lighten($error-color, 0.1);
+    box-shadow: 0px 2px $error-color;
+  }
 }
 
 .important {
@@ -104,18 +90,12 @@
   border-color: darken($warning-color, 0.1);
   box-shadow: 0px 2px darken($warning-color, 0.12);
   color: white;
-}
 
-.important:hover,
-.important:active {
-  text-decoration: none;
-  cursor: pointer;
-  background-color: darken($warning-color, 0.02);
-  box-shadow: 0px 2px darken($warning-color, 0.05);
-}
-
-.important:focus {
-  outline: none;
+  &:hover,
+  &:active {
+    background-color: darken($warning-color, 0.02);
+    box-shadow: 0px 2px darken($warning-color, 0.05);
+  }
 }
 
 .secondary {
@@ -126,18 +106,12 @@
   position: relative;
   transition: color 0.15s ease-in-out;
   top: 1px;
-}
 
-.secondary:hover,
-.secondary:active {
-  text-decoration: none;
-  cursor: pointer;
-  border: 1px solid darken($medium-gray, 0.2);
-  color: darken($medium-gray, 0.1);
-}
-
-.secondary:focus {
-  outline: none;
+  &:hover,
+  &:active {
+    border: 1px solid darken($medium-gray, 0.2);
+    color: darken($medium-gray, 0.1);
+  }
 }
 
 .secondaryInverse {
@@ -148,17 +122,12 @@
   position: relative;
   transition: color 0.15s ease-in-out;
   top: 1px;
-}
 
-.secondaryInverse:hover,
-.secondaryInverse:active {
-  cursor: pointer;
-  border-color: $light-gray;
-  color: $light-gray;
-}
-
-.secondaryInverse:focus {
-  outline: none;
+  &:hover,
+  &:active {
+    border-color: $light-gray;
+    color: $light-gray;
+  }
 }
 
 .text {
@@ -168,17 +137,11 @@
   transition: color 0.15s ease-in-out;
   top: 1px;
   position: relative;
-}
 
-.text:hover,
-.text:active {
-  text-decoration: none;
-  cursor: pointer;
-  color: darken($medium-gray, 0.1);
-}
-
-.text:focus {
-  outline: none;
+  &:hover,
+  &:active {
+    color: darken($medium-gray, 0.1);
+  }
 }
 
 .textInverse {
@@ -188,16 +151,11 @@
   position: relative;
   transition: color 0.15s ease-in-out;
   top: 1px;
-}
 
-.textInverse:hover,
-.textInverse:active {
-  cursor: pointer;
-  color: $light-gray;
-}
-
-.textInverse:focus {
-  outline: none;
+  &:hover,
+  &:active {
+    color: $light-gray;
+  }
 }
 
 .disabled {
@@ -205,5 +163,14 @@
   background-color: #cccccc;
   box-shadow: 0px 2px darken(#cccccc, 0.1);
   color: #999999;
-  cursor: auto;
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+    cursor: auto;
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
