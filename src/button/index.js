@@ -1,11 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
+import jss from 'jss';
+import nested from 'jss-nested';
 
 import styles from './button.css';
 
 import { Icon } from 'infl-icons';
-import { ThemeComponent } from '../themeable';
+import { connectTheme } from 'gild';
+
 import mapping from './theme';
+jss.use(nested());
 
 export class Button extends Component {
   static propTypes = {
@@ -17,7 +21,7 @@ export class Button extends Component {
     isSubmit:  PropTypes.bool,
     style:     PropTypes.object,
     classList: PropTypes.string,
-    sheet:     PropTypes.object
+    theme:     PropTypes.object
   };
 
   static defaultProps = {
@@ -26,7 +30,7 @@ export class Button extends Component {
     inverse:   false,
     isSubmit:  false,
     classList: null,
-    sheet: { classes: {} },
+    theme: {},
     type:  'default'
   };
 
@@ -43,8 +47,7 @@ export class Button extends Component {
   }
 
   _getClasses = () => {
-    const { disabled, classList, type } = this.props;
-    const { classes } = this.props.sheet;
+    const { disabled, classList, type, theme } = this.props;
 
     return classNames(
       styles[this._determineButtonClass()],
@@ -52,7 +55,7 @@ export class Button extends Component {
         disabled:   disabled
       },
       classList,
-      classes[type]
+      theme[type]
     );
   };
 
@@ -79,4 +82,4 @@ export class Button extends Component {
   }
 }
 
-export default ThemeComponent(Button, mapping);
+export default connectTheme(mapping)(Button);

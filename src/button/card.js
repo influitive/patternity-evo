@@ -1,5 +1,6 @@
 import devboard from 'devboard';
 import React, { Component } from 'react';
+import { ThemeProvider } from 'gild';
 import Button from './index.js';
 
 const devcard = devboard.ns('buttons');
@@ -29,31 +30,26 @@ devcard(
 );
 
 // Themed Button
-import { createTheme } from '../themeable';
-const colors = { themeColorPrimary: '#0000FF', themeColorSecondary: '#BADA55' };
-const Theme = createTheme(colors);
-
-class Context extends Component { render() { return <div style={{textAlign: 'center'}}>{this.props.children}</div>; } }
-const Container = Theme(Context);
+class Container extends Component { render() { return <div style={{textAlign: 'center'}}>{this.props.children}</div>; } }
 
 devcard(
   'Themed Button',
   `
-  Theme Values:
-
-  ${JSON.stringify(colors)}
-
   Themed Buttons
   `,
-  <Container>
-    <Button type="primary">Primary</Button>
-    <Button type="secondary">Secondary</Button>
-    <Button type="important">Important</Button>
-    <Button type="success">Success</Button>
-    <Button type="danger">Danger</Button>
-    <Button type="text" inverse={true}>Text</Button>
-    <Button>Default</Button>
-  </Container>,
+  <ThemeProvider theme={{
+    themeColorPrimary: 'pink'
+  }}>
+    <Container>
+      <Button type="primary">Primary</Button>
+      <Button type="secondary">Secondary</Button>
+      <Button type="important">Important</Button>
+      <Button type="success">Success</Button>
+      <Button type="danger">Danger</Button>
+      <Button type="text" inverse={true}>Text</Button>
+      <Button>Default</Button>
+    </Container>
+  </ThemeProvider>,
 );
 
 devcard(

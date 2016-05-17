@@ -7,7 +7,7 @@ export default function(theme) {
     primary: {
       'background-color': themeColorPrimary,
       'border-color': darken(themeColorPrimary, .1),
-      'box-shadow': `0px 2px ${darken(themeColorPrimary, .25)}`,
+      'box-shadow': `0px 2px ${darken(themeColorPrimary, .1)}`,
       '&:hover': {
         'background-color': lighten(themeColorPrimary, .1),
         'box-shadow': `0px 2px ${themeColorPrimary}`
@@ -18,7 +18,7 @@ export default function(theme) {
       'color': themeColorPrimary,
       '&:hover': {
         'border-color': darken(themeColorPrimary, 0.2),
-        'color': darken(themeColorPrimary, 0.2),
+        'color': darken(themeColorPrimary, 0.2)
       }
     }
   };
