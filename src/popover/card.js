@@ -5,13 +5,23 @@ import Popover from './index.js';
 const devcard = devboard.ns('popovers');
 
 devcard(
+  'Test Render Element To',
+  <div id="test-target-element"></div>
+);
+
+devcard(
   'Basic Open',
-  <div style={{textAlign: 'center'}}>
-    <Popover element={<a>Open Popover Demo</a>} isOpen={true}>
-      <a href="javascript://">Edit</a>
-      <a href="javascript://">Lock</a>
-      <a href="javascript://">Move</a>
-      <a href="javascript://">Delete</a>
+  <div style={{textAlign: 'center', position: 'fixed', top: '200px', left: '200px'}}>
+    <Popover
+      element={<a>Open Popover Demo</a>}
+      isOpen={true}
+      renderElementTo="#test-target-element">
+      <div style={{padding: '50px'}}>
+        <a href="javascript://">Edit</a>
+        <a href="javascript://">Lock</a>
+        <a href="javascript://">Move</a>
+        <a href="javascript://">Delete</a>
+      </div>
     </Popover>
   </div>
 );
