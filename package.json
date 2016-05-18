@@ -32,7 +32,7 @@
     "react-bootstrap": "0.28.3",
     "react-jss": "2.0.1",
     "react-select": "^1.0.0-beta8",
-    "react-tether": "^0.5.1"
+    "react-tether": "^0.5.2"
   },
   "devDependencies": {
     "babel-cli": "6.5.1",

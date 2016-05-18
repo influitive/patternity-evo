@@ -20,7 +20,8 @@ class Popover extends Component {
       }
     }),
     hasShadow: PropTypes.bool,
-    onClickOut: PropTypes.func
+    onClickOut: PropTypes.func,
+    renderElementTo: PropTypes.string
   }
 
   static defaultProps = {
@@ -32,7 +33,8 @@ class Popover extends Component {
       background:  '#fff'
     },
     hasShadow:          false,
-    onClickOut:         null
+    onClickOut:         null,
+    renderElementTo:    null
   }
 
   componentDidUpdate(prevProps) {
@@ -40,6 +42,10 @@ class Popover extends Component {
   }
 
   render() {
+    if(!this.props.isOpen) {
+      return this.props.element;
+    }
+
     return <span className={styles.main}>
       {this.getTetherElement()}
       {this.getArrowElement()}
@@ -118,7 +124,8 @@ class Popover extends Component {
           to: 'window',
           pin: ['left','right']
         }
-      ]
+      ],
+      renderElementTo: this.props.renderElementTo
     };
   }
 
