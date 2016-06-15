@@ -25,7 +25,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "color": "0.11.1",
-    "gild": "0.0.6",
+    "gild": "^0.1.1",
     "infl-icons": "git://github.com/influitive/infl-icons.git",
     "jss": "3.3.0",
     "jss-nested": "^1.0.3",
