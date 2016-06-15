@@ -4,13 +4,16 @@
   "version": "0.0.15",
   "description": "Component Library for Influitive",
   "main": "index.js",
+  "files": [
+    "lib/*"
+  ],
   "scripts": {
     "test:watch": "nodemon --quiet --exec \"npm run --silent test\" --watch src",
     "test:ci": "BABEL_ENV=test babel-tape-runner \"src/**/*/*test.js\" | tap-dot",
     "ci": "npm run test:ci && npm run lint",
     "test": "BABEL_ENV=test tape-babel-css-modules \"src/**/*/*test.js\" | tap-spec",
     "build": "rm -rf lib && gulp --silent && babel --quiet src -d lib",
-    "pub": "NODE_ENV=production npm run build && npm publish",
+    "prepublish": "NODE_ENV=production npm run build",
     "start": "kotatsu serve -c example/webpack.config.js --progress --devtool \\#eval-source-map --babel example/index.js & npm run test:watch",
     "lint": "eslint ."
   },
