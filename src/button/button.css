@@ -44,16 +44,7 @@
 
 .primary {
   composes: button;
-  background-color: $theme-color-primary;
-  border-color: darken($theme-color-primary, 0.1);
-  box-shadow: 0px 2px darken($theme-color-primary, 0.1);
   color: white;
-
-  &:hover,
-  &:active {
-    background-color: lighten($theme-color-primary, 0.05);
-    box-shadow: 0px 2px $theme-color-primary;
-  }
 }
 
 .success {

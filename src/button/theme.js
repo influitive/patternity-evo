@@ -1,7 +1,11 @@
 import { darken, lighten } from '../utils/colors.js';
 
 export default function(theme) {
-  const { themeColorPrimary } = theme;
+  const newTheme = {
+    themeColorPrimary: '#08a5c5',
+    ...theme
+  };
+  const { themeColorPrimary } = newTheme;
 
   return {
     primary: {
