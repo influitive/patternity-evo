@@ -1,0 +1,31 @@
+machine:
+  node:
+    version: 5.5.0
+  post:
+    - npm install -g npm@3.x.x
+test:
+  override:
+    - npm run lint
+    - npm test
+    - npm run flow
+dependencies:
+  pre:
+    - sudo pip install awscli
+  override:
+    - npm install --no-spin
+deployment:
+  qa:
+    branch: development
+    commands:
+      - npm run deploy development
+  staging:
+    branch: master
+    commands:
+      - npm run deploy staging
+  production:
+    tag: /release-.*/
+    commands:
+      - npm run deploy production
+
+
+

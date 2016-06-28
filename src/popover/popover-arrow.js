@@ -35,12 +35,12 @@ class PopoverArrow extends Component {
     const borderPos = position.charAt(0).toUpperCase() + position.substr(1);
 
     return <div className={cn(styles.arrowContainer, styles[position])}>
-      <span className={styles.arrow} style={{[`border${borderPos}Color`]: borderColor}}>
+      <span className={styles.arrow} style={{ [`border${borderPos}Color`]: borderColor }}>
         <span className={cn(
             styles.inner,
             styles.arrow,
-            { [`${styles.noBorder}`] : !shouldHaveBorder})}
-          style={{[`border${borderPos}Color`]: background }}>
+            { [`${styles.noBorder}`]: !shouldHaveBorder })}
+          style={{ [`border${borderPos}Color`]: background }}>
         </span>
       </span>
     </div>;

@@ -12,7 +12,7 @@ class Popover extends Component {
     onOpen:            PropTypes.func,
     style: PropTypes.shape({
       background:  PropTypes.string.isRequired,
-      borderColor: function(props) {
+      borderColor(props) {
         let borderColor = props.borderColor || '';
         if (borderColor.length > 0 && /rgba/.test(props.background)) {
           return new Error('Cannot use border with transparent background');
@@ -27,7 +27,7 @@ class Popover extends Component {
   static defaultProps = {
     isOpen:            false,
     position:          'top',
-    onOpen:            function() {},
+    onOpen() {},
     style: {
       borderColor: '#ccc',
       background:  '#fff'
@@ -42,7 +42,7 @@ class Popover extends Component {
   }
 
   render() {
-    if(!this.props.isOpen) {
+    if (!this.props.isOpen) {
       return this.props.element;
     }
 
@@ -130,7 +130,7 @@ class Popover extends Component {
   }
 
   getPopoverContent = () => {
-    const {position, hasShadow, children} = this.props;
+    const { position, hasShadow, children } = this.props;
 
     return <PopoverContent
       position={position}

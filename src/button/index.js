@@ -41,7 +41,7 @@ export class Button extends Component {
       disabled={disabled}
       className={this._getClasses()}
       onClick={onClick}>
-      { this._hasIcon() }
+      {this._hasIcon()}
       {children}
     </button>;
   }
@@ -52,7 +52,7 @@ export class Button extends Component {
     return classNames(
       styles[this._determineButtonClass()],
       {
-        disabled:   disabled
+        disabled
       },
       classList,
       theme[type]
@@ -62,9 +62,9 @@ export class Button extends Component {
   _determineButtonClass = () => {
     const { disabled, inverse, type } = this.props;
 
-    if(disabled) return 'disabled';
+    if (disabled) return 'disabled';
 
-    if((type === 'secondary' || type === 'text') && inverse) {
+    if ((type === 'secondary' || type === 'text') && inverse) {
       return type + 'Inverse';
     }
 
@@ -72,7 +72,7 @@ export class Button extends Component {
   }
 
   _hasIcon = () => {
-    if(this.props.icon === '') return null;
+    if (this.props.icon === '') return null;
 
     return (
       <span className={styles.icon}>

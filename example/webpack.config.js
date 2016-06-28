@@ -18,7 +18,7 @@ module.exports = {
       }
     ]
   },
-  postcss: function() {
+  postcss() {
     return postcssPlugins;
   }
 };

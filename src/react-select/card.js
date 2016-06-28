@@ -13,7 +13,7 @@ const options = [
 
 devcard(
   'React-Select',
-  <div style={{height: '200px' }}>
+  <div style={{ height: '200px' }}>
     <Select name="example-select" options={options} />
   </div>
 );
@@ -40,8 +40,8 @@ class Stateful extends Component {
 
 devcard(
   'React-Select: Multi',
-  `This is a multi-select`,
-  <div style={{height: '200px' }}>
+  'This is a multi-select',
+  <div style={{ height: '200px' }}>
     <Stateful />
   </div>
 );
