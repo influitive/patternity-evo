@@ -1,0 +1,127 @@
+.Modal {
+
+}
+
+:global {
+  .modal-open {
+    overflow: hidden;
+  }
+  .modal {
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+  }
+  .modal.fade .modal-dialog {
+    transform: translate(0, -25%);
+    transition: transform 0.3s ease-out;
+  }
+  .modal.in .modal-dialog {
+    transform: translate(0, 0);
+  }
+  .modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .modal-dialog {
+    position: relative;
+    width: auto;
+  }
+  .modal-content {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid $lighter-gray;
+  }
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background: $dark-gray;
+  }
+  .modal-backdrop.fade {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  .modal-backdrop.in {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+  }
+  .modal-header {
+    padding: 24px 55px 24px 24px;
+    font-size: 19px;
+  }
+  .modal-header .close {
+    margin-top: -2px;
+    border: none;
+    background-color: transparent;
+    font-size: 40px;
+    font-weight: 100;
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    cursor: pointer;
+  }
+  .modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+  }
+  .modal-body {
+    position: relative;
+    padding: 0 24px 24px;
+  }
+  .modal-footer {
+    padding: 12px 24px;
+    text-align: right;
+    border-top: 1px solid $lighter-gray;
+  }
+  .modal-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll;
+  }
+  @media (min-width: 768px) {
+    .modal-dialog {
+      width: 600px;
+      margin: 30px auto;
+    }
+    .modal-sm {
+      width: 300px;
+    }
+    .modal-content {
+      border-radius: 2px;
+    }
+  }
+  @media (min-width: 992px) {
+    .modal-lg {
+      width: 900px;
+    }
+    .modal-content {
+      border-radius: 2px;
+    }
+  }
+  .clearfix:before,
+  .clearfix:after,
+  .modal-header:before,
+  .modal-header:after,
+  .modal-footer:before,
+  .modal-footer:after {
+    content: " ";
+    display: table;
+  }
+  .clearfix:after,
+  .modal-header:after,
+  .modal-footer:after {
+    clear: both;
+  }
+}
