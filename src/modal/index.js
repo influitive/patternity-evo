@@ -20,7 +20,7 @@ export default class Modal extends Component {
     class:         '',
     closeable:     true,
     size:          'large',
-    onClose:       function() {},
+    onClose:       () => {},
     keyboard:      true,
     animate:       false
   }
@@ -35,7 +35,7 @@ export default class Modal extends Component {
         autoFocus={true}
         backdrop={this._backdrop()}
         bsSize={this.props.size}
-        dialogClassName={this.props.class}>
+        dialogClassName={this.props.class + ' ' + classes.Modal}>
         {this._renderChildren()}
       </BsModal>
     );
@@ -48,7 +48,7 @@ export default class Modal extends Component {
   _renderChildren() {
     return React.Children.map(this.props.children,
       (child) => {
-        if(child.type === Header){
+        if (child.type === Header) {
           return React.cloneElement(child, {
             closeable: this.props.closeable,
             onClose: this.props.onClose

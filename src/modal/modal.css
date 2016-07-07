@@ -1,3 +1,7 @@
+.Modal {
+
+}
+
 :global {
   .modal-open {
     overflow: hidden;
@@ -15,18 +19,10 @@
     outline: 0;
   }
   .modal.fade .modal-dialog {
-    -webkit-transform: translate(0, -25%);
-    -ms-transform: translate(0, -25%);
-    -o-transform: translate(0, -25%);
     transform: translate(0, -25%);
-    -webkit-transition: -webkit-transform 0.3s ease-out;
-    -o-transition: -o-transform 0.3s ease-out;
     transition: transform 0.3s ease-out;
   }
   .modal.in .modal-dialog {
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
     transform: translate(0, 0);
   }
   .modal-open .modal {
@@ -36,13 +32,11 @@
   .modal-dialog {
     position: relative;
     width: auto;
-    margin: 10px;
   }
   .modal-content {
     position: relative;
     background-color: #ffffff;
     border: 1px solid $lighter-gray;
-    border-radius: 2px;
   }
   .modal-backdrop {
     position: fixed;
@@ -89,16 +83,6 @@
     text-align: right;
     border-top: 1px solid $lighter-gray;
   }
-  .modal-footer .btn + .btn {
-    margin-left: 5px;
-    margin-bottom: 0;
-  }
-  .modal-footer .btn-group .btn + .btn {
-    margin-left: -1px;
-  }
-  .modal-footer .btn-block + .btn-block {
-    margin-left: 0;
-  }
   .modal-scrollbar-measure {
     position: absolute;
     top: -9999px;
@@ -114,10 +98,16 @@
     .modal-sm {
       width: 300px;
     }
+    .modal-content {
+      border-radius: 2px;
+    }
   }
   @media (min-width: 992px) {
     .modal-lg {
       width: 900px;
+    }
+    .modal-content {
+      border-radius: 2px;
     }
   }
   .clearfix:before,

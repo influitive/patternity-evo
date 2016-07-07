@@ -10,15 +10,18 @@ const devcard = devboard.ns('Modal');
 devcard(
   'Modal',
   'Example of Modal Dialog Component',
-  ({state}) => <div>
-      {modal(state)}
-      <Button onClick={({ target }) => state.swap(set('isOpen', true))}>Show Modal</Button>
-    </div>
-  ,
+  ({ state }) => {
+    return (
+      <div>
+        {modal(state)}
+        <Button onClick={() => state.swap(set('isOpen', true))}>Show Modal</Button>
+      </div>
+    );
+  },
   {
     state: devboard.atom({
       isOpen: false
-    }),
+    })
   }
 );
 
@@ -39,12 +42,12 @@ const modal = (state) => {
       </Body>
       <Footer>
         <Button onClick={() => state.swap(set('isOpen', false))}>Cancel</Button>
-        <span style={{'padding-left': '10px'}}>
+        <span style={{ 'padding-left': '10px' }}>
           <Button onClick={() => state.swap(set('isOpen', false))} type="success">Ok</Button>
         </span>
       </Footer>
     </Modal>
-  )
+  );
 };
 
 const set = (key, val) => {
