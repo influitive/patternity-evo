@@ -35,7 +35,7 @@ export default class Modal extends Component {
         autoFocus={true}
         backdrop={this._backdrop()}
         bsSize={this.props.size}
-        dialogClassName={this.props.class + ' ' + classes.Modal}>
+        dialogClassName={this.props.class + ' ' + classes.__modal}>
         {this._renderChildren()}
       </BsModal>
     );
