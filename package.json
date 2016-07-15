@@ -45,7 +45,7 @@
     "babel-register": "6.5.2",
     "babel-tape-runner": "2.0.1",
     "css-loader": "0.23.1",
-    "devboard": "^0.5.0",
+    "devboard": "^0.6.2",
     "enzyme": "2.0.0",
     "eslint": "^2.13.1",
     "eslint-config-reforge": "^1.0.0",
