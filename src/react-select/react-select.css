@@ -1,4 +1,18 @@
+.arrow {
+  align-items: center;
+  display: flex;
+  position: absolute;
+  right: 0px;
+  height: 100%;
+}
+.input {
+  flex: 2;
+}
+
 .scope {
+  display: flex;
+  position: relative;
+
 :global {
 /**
  * React Select
@@ -171,25 +185,7 @@
 .Select--multi .Select-clear-zone {
   width: 17px;
 }
-.Select-arrow-zone {
-  cursor: pointer;
-  display: table-cell;
-  position: relative;
-  text-align: center;
-  vertical-align: middle;
-  width: 25px;
-  padding-right: 5px;
-}
-.Select-arrow::after {
-  font-family: 'influicons';
-  display:block;
-  font-size: 20px;
-  position: absolute;
-  top: 5px;
-  right: 3px;
-  z-index: 1;
-  content: "\E00C"
-}
+
 .is-open .Select-arrow3
 .Select-arrow-zone:hover > .Select-arrow {
   border-top-color: #666;
