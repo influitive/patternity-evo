@@ -76,6 +76,6 @@
     "tape-babel-css-modules": "^1.2.1",
     "tape-catch": "1.0.4",
     "url-loader": "0.5.7",
-    "webpack": "1.12.14"
+    "webpack": "1.12.15"
   }
 }
