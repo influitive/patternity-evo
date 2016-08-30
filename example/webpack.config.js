@@ -7,7 +7,9 @@ const postcssPlugins = require('../postcss.config');
 module.exports = {
   module: {
     loaders: [
-      { test: /\.css$/, loader: 'style!css?modules!postcss' },
+      { test: /\.css$/,
+        loader: 'style-loader!css-loader?localIdentName=[name]---[local]---[hash:base64:5]&modules!postcss-loader'
+      },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'url-loader?limit=10000&mimetype=application/font-woff'
