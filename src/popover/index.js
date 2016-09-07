@@ -146,8 +146,8 @@ class Popover extends Component {
     return borderColor.length > 0 && !/rgba/.test(this.props.style.background);
   }
 
-  handleBackDropClick = () => {
-    this.props.onClickOut();
+  handleBackDropClick = (event) => {
+    this.props.onClickOut(event);
   }
 }
 
