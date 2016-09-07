@@ -7,7 +7,6 @@ import styles from './tooltip.css';
 export default class Tooltip extends Component {
 
   static propTypes = {
-    title:             PropTypes.string,
     element:           PropTypes.node.isRequired,
     position:          PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     onOpen:            PropTypes.func,
@@ -16,7 +15,6 @@ export default class Tooltip extends Component {
   }
 
   static defaultProps = {
-    title:             '',
     position:          'top',
     onOpen:            () => {},
 
@@ -37,7 +35,7 @@ export default class Tooltip extends Component {
     return (
       <span className={styles.tooltip}>
         <Popover
-          element={this._tooltipElement()}
+          element={this.tooltipElement()}
           isOpen={this.state.showTooltip}
           position={this.props.position}
           onOpen={this.props.onOpen}
@@ -57,7 +55,7 @@ export default class Tooltip extends Component {
     return (
       <span className={styles.tooltipElement}
         onMouseOver={this.handleMouseOver}
-        onMouseOut={this.closeTooltip}>
+        onMouseOut={this.handleMouseOut}>
         {this.props.element}
       </span>
     );
