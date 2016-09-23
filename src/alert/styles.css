@@ -70,7 +70,7 @@
       }
     }
 
-    .pt-alert-action {
+    .alertAction {
       button {
         border-color: darken($warning-color, 0.1);
         color: darken($warning-color, 0.1) !important;
@@ -95,7 +95,7 @@
       }
     }
 
-    .pt-alert-action {
+    .alertAction {
       button {
         border-color: darken($success-color, 0.15);
         color: darken($success-color, 0.15) !important;
@@ -120,7 +120,7 @@
       }
     }
 
-    .pt-alert-action {
+    .alertAction {
       button {
         border-color: $error-color;
         color: $error-color !important;
@@ -133,7 +133,7 @@
     }
   }
 
-  .pt-alert-action {
+  .alertAction {
     position: absolute;
     top: 10px;
     right: 20px;
@@ -149,13 +149,13 @@
       }
     }
 
-    & + .alert-body {
+    & + .alertBody {
       padding-right: 0.4;
       min-height: 12px;
     }
   }
 
-  .pt-alert-detailed {
+  .alertDetailed {
     background-color: #fff;
     padding: 20px;
     margin-top: 20px;
@@ -168,7 +168,7 @@
         margin-bottom: 1.33em;
     }
 
-    .pt-alert-detailed-action {
+    .alertDetailedAction {
       position: absolute;
       right: 20px;
       top: 15px;
@@ -183,7 +183,7 @@
 
 @media only screen and (max-width : 480px) {
   .alertMsg {
-    .pt-alert-action {
+    .alertAction {
       bottom: 15px;
       left: 46px;
       right: auto;

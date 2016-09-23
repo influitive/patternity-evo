@@ -19,7 +19,7 @@ export default class Alert extends Component {
     showIcon:  false,
     closeable: false,
     showAlert: true,
-    onClose:   function() {},
+    onClose() {},
     hideIn:    0
   }
 
@@ -54,7 +54,7 @@ export default class Alert extends Component {
   hideAlert = () => {
     const { hideIn } = this.props;
     if (hideIn > 0) {
-      this.hideInTimeout = setTimeout(this.close, hideIn*1000);
+      this.hideInTimeout = setTimeout(this.close, hideIn * 1000);
     }
   };
 
@@ -68,7 +68,7 @@ export default class Alert extends Component {
     {this.closeable()}
   </div>;
 
-  classes = () => 
+  classes = () =>
     cn(
       styles.alertMsg,
       {
@@ -77,7 +77,7 @@ export default class Alert extends Component {
         [styles[this.props.type]]: this.props.type
       }
     );
-  
+
   title = () => {
     if (this.props.title) {
       return (
@@ -95,7 +95,7 @@ export default class Alert extends Component {
 
     if (!showIcon)
       return null;
-    
+
     return <span className={styles.alertIcon}>
       <Icon icon={this.determineIconType()}/>
     </span>;
@@ -109,8 +109,8 @@ export default class Alert extends Component {
   closeable = () => {
     return this.state.closeable
       ? <span className={styles.close} onClick={this.close}>
-          <Icon icon='close'/>
-        </span>
-      : null;
+        <Icon icon='close'/>
+      </span>
+    : null;
   };
 }

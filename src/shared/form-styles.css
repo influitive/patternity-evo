@@ -1,0 +1,94 @@
+.isRequired {
+  position: relative;
+  display: inline-block;
+
+  .requiredInput {
+    position: absolute;
+    top: 11px;
+    left: 2px;
+    color: $error-color;
+    font-size: 15px;
+  }
+
+  input {
+    padding-left: 15px;
+  }
+}
+
+.isError {
+  input,
+  textarea,
+  select,
+  .selectBox {
+    border-color: $error-color;
+    color: $error-color;
+    background-color: lighten($error-color, 0.4);
+  }
+
+  .inputMessage {
+    color: $error-color;
+  }
+}
+
+.isValid {
+  input,
+  textarea,
+  select,
+  .selectBox {
+    border-color: $success-color;
+    color: darken($success-color, 0.07);
+    background-color: lighten($success-color, 0.4);
+  }
+
+  .inputMessage {
+    color: $success-color;
+  }
+}
+
+.isClearable {
+  position: relative;
+  display: inline-block;
+
+  input {
+    padding-right: 30px;
+  }
+
+  .clearInput {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    cursor: pointer;
+    padding: 10px;
+
+    &:hover {
+      color: $darker-gray;
+    }
+  }
+}
+
+.isDisabled {
+  input,
+  .selectBox {
+    background-color: $lighter-gray;
+    color: $medium-gray;
+  }
+}
+
+.searchInput {
+  position: relative;
+  display: inline-block;
+
+  .searchInput {
+    position: absolute;
+    top: 5px;
+    z-index: 1;
+    left: 10px;
+    font-size: 20px;
+  }
+
+  input[type='search'] {
+    padding-left: 40px;
+    height: 2.21em;
+    line-height: 2.21em;
+  }
+}
