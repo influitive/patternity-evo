@@ -1,0 +1,88 @@
+.toggleSwitch {
+  width: 80px;
+  height:30px;
+  border-radius: 2px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  line-height: 1em;
+
+  transition: background-color 0.3s ease-in-out;
+
+  &.off {
+    background-color: lighten($error-color, 0.07);
+    box-shadow: 0px -1px $error-color;
+
+    .switch {
+      left: 2px;
+    }
+
+    .toggleText {
+      right: 9px;
+    }
+  }
+
+  &.on {
+    background-color: $success-color;
+    box-shadow: 0px -1px darken($success-color, 0.1);
+
+    .switch {
+      left: 38px;
+    }
+
+    .toggleText {
+      left: 9px;
+    }
+  }
+
+  &.disabled {
+    background-color: $light-gray;
+    box-shadow: 0px -1px $dark-gray;
+
+    .toggleText {
+      color: $dark-gray;
+    }
+  }
+
+  .toggleText {
+    color: #fff;
+    position: absolute;
+    top: 8px;
+    font-size: 15px;
+    font-weight: normal;
+  }
+
+  .switch {
+    display: block;
+    position: absolute;
+    height: 28px;
+    width: 40px;
+    border-radius: 2px;
+    top: 0px;
+    background-color: $lighter-gray;
+    box-shadow: 0px 1px $dark-gray;
+
+    transition: left 0.3s ease-in-out;
+
+    .switchLine {
+      width: 1px;
+      height: 15px;
+      background-color: $light-gray;
+      position: absolute;
+      top: 6px;
+      left: 20px;
+
+      &:first-child {
+        left: 12px;
+      }
+
+      &:last-child {
+        left: 28px;
+      }
+    }
+  }
+
+  .toggleCheckbox {
+    visibility: hidden;
+  }
+}
