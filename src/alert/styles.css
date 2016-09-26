@@ -1,0 +1,198 @@
+.alertMsg {
+  padding: 10px 20px;
+  border-radius: 2px;
+  background-color: lighten($info-color, 0.55);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  color: $info-color;
+
+  &.hide {
+    display: none;
+  }
+
+  h4 {
+    margin: 0px;
+    line-height: 35px;
+    font-size: 16px;
+    text-align: left;
+
+    span {
+      vertical-align: middle;
+    }
+  }
+
+  .alertIcon {
+    margin-right: 10px;
+  }
+
+  .close {
+    padding: 10px;
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    color: $info-color;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 3;
+
+    &:hover {
+      color: darken($info-color, 0.1);
+      transition: color 0.5s ease-out;
+    }
+  }
+
+  .alertBody {
+    overflow: hidden;
+    position: relative;
+    line-height: 1.2em;
+  }
+
+  &.hasIcon {
+    .alertBody {
+      padding-left: 26px;
+
+      .detailed {
+        margin-left: -26px;
+      }
+    }
+  }
+
+  &.warning {
+    background-color: lighten($warning-color, 0.45);
+    color: darken($warning-color, 0.1);
+
+    .close {
+      color: darken($warning-color, 0.1);
+
+      &:hover {
+        color: darken($warning-color, 0.15);
+      }
+    }
+
+    .alertAction {
+      button {
+        border-color: darken($warning-color, 0.1);
+        color: darken($warning-color, 0.1) !important;
+
+        &:hover {
+          border-color: darken($warning-color, 0.15);
+          color: darken($warning-color, 0.15) !important;
+        }
+      }
+    }
+  }
+
+  &.success {
+    background-color: lighten($success-color, 0.4);
+    color: darken($success-color, 0.15);
+
+    .close {
+      color: darken($success-color, 0.15);
+
+      &:hover {
+        color : darken($success-color, 0.1);
+      }
+    }
+
+    .alertAction {
+      button {
+        border-color: darken($success-color, 0.15);
+        color: darken($success-color, 0.15) !important;
+
+        &:hover {
+          border-color: darken($success-color, 0.1);
+          color: darken($success-color, 0.1) !important;
+        }
+      }
+    }
+  }
+
+  &.error {
+    background-color: lighten($error-color, 0.4);
+    color: $error-color;
+
+    .close {
+      color: $error-color;
+
+      &:hover {
+        color : darken($error-color, 0.1);
+      }
+    }
+
+    .alertAction {
+      button {
+        border-color: $error-color;
+        color: $error-color !important;
+
+        &:hover {
+          border-color: darken($error-color, 0.1);
+          color: darken($error-color, 0.1) !important;
+        }
+      }
+    }
+  }
+
+  .alertAction {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 3;
+
+    button {
+      border-color: $info-color;
+      color: $info-color !important;
+
+      &:hover {
+        border-color: lighten($info-color, 0.02);
+        color: lighten($info-color, 0.02) !important;
+      }
+    }
+
+    & + .alertBody {
+      padding-right: 0.4;
+      min-height: 12px;
+    }
+  }
+
+  .alertDetailed {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    color: $darker-gray;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+
+    h4 {
+        margin-bottom: 1.33em;
+    }
+
+    .alertDetailedAction {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $info-color;
+    }
+  }
+}
+
+@media only screen and (max-width : 480px) {
+  .alertMsg {
+    .alertAction {
+      bottom: 15px;
+      left: 46px;
+      right: auto;
+      top: auto;
+
+      & + .alertBody {
+        padding-right: 0px;
+        padding-bottom: 50px;
+      }
+    }
+  }
+}
