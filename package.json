@@ -13,7 +13,8 @@
     "build": "rm -rf lib && gulp --silent && babel --quiet src -d lib",
     "prepublish": "NODE_ENV=production npm run build",
     "start": "kotatsu serve -c example/webpack.config.js --progress --devtool \\#eval-source-map --babel example/index.js & npm run test:watch",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [
     "React",
