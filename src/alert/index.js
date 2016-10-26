@@ -1,116 +1,74 @@
 import React, { PropTypes, Component } from 'react';
+
+import { Icon } from 'infl-icons';
 import styles from './styles.css';
 import cn from 'classnames';
-import { Icon } from 'infl-icons';
+import Action from './action';
+import Detail from './detail';
 
-export default class Alert extends Component {
+const typeToIconMap = {
+  success: 'check-circle-o',
+  error:   'exclamation-circle-o',
+  warning: 'info-circle-o'
+};
+
+class Alert extends Component {
   static propTypes = {
     title:     PropTypes.string,
     type:      PropTypes.oneOf(['success', 'error', 'info', 'warning']),
     showIcon:  PropTypes.bool,
-    closeable: PropTypes.bool,
-    showAlert: PropTypes.bool,
     onClose:   PropTypes.func,
-    hideIn:    PropTypes.number
+    action:    PropTypes.object
   };
 
   static defaultProps = {
     title:     '',
+    type:      'info',
     showIcon:  false,
-    closeable: false,
-    showAlert: true,
-    onClose() {},
-    hideIn:    0
-  }
-
-  hideInTimeout = null;
-
-  state = {
-    showAlert: this.props.showAlert,
-    closeable: this.props.closeable
+    show: true
   };
 
-  componentWillReceiveProps = (newProps) => {
-    this.clearHideInTimeout();
-    this.setState({
-      showAlert: newProps.showAlert,
-      closeable: newProps.closeable
-    });
-  };
-
-  componentDidMount = () => {
-    this.hideAlert();
-  };
-
-  componentWillUpdate = (nextProps) => {
-    this.clearHideInTimeout();
-    this.hideAlert(nextProps.hideIn);
-  };
-
-  clearHideInTimeout = () =>{
-    window.clearTimeout(this.hideInTimeout);
-  };
-
-  hideAlert = () => {
-    const { hideIn } = this.props;
-    if (hideIn > 0) {
-      this.hideInTimeout = setTimeout(this.close, hideIn * 1000);
-    }
-  };
-
-  render = () => <div className={this.classes()}>
-    <div className={styles.text}>
-      {this.title()}
-      <div className={styles.alertBody}>
-        {this.props.children}
-      </div>
-    </div>
-    {this.closeable()}
-  </div>;
+  icon = () => typeToIconMap[this.props.type] || 'alert-caution';
 
   classes = () =>
     cn(
-      styles.alertMsg,
-      {
-        [styles.hasIcon]: this.props.showIcon,
-        [styles.hide]: !this.props.showAlert,
-        [styles[this.props.type]]: this.props.type
-      }
+      styles.alert,
+      styles[this.props.type]
     );
 
-  title = () => {
-    if (this.props.title) {
-      return (
-        <h4 className={styles.alertTitle}>
-          {this.icon()}
-          <span>{this.props.title}</span>
-        </h4>
-      );
-    }
-    return null;
-  };
+  render = () => {
+    const { onClose, title, children, showIcon, action } = this.props;
 
-  icon = () => {
-    const { showIcon } = this.props;
-
-    if (!showIcon)
-      return null;
-
-    return <span className={styles.alertIcon}>
-      <Icon icon={this.determineIconType()}/>
-    </span>;
-  };
-
-  close = () => {
-    this.setState({ showAlert: false });
-    this.props.onClose();
-  };
-
-  closeable = () => {
-    return this.state.closeable
-      ? <span className={styles.close} onClick={this.close}>
-        <Icon icon='close'/>
-      </span>
-    : null;
+    return <div className={this.classes()}>
+      {showIcon &&
+        <span className={styles.icon}>
+          <Icon icon={this.icon()}/>
+        </span>
+      }
+      <div className={styles.content}>
+        <div className={styles.titleAndBody}>
+          {title &&
+            <h4>
+              {title}
+            </h4>
+          }
+          <div className={styles.body}>
+            {children}
+          </div>
+        </div>
+        {action &&
+          <Action onClick={action.onClick} title={action.title} />
+        }
+      </div>
+      {onClose &&
+        <span className={styles.close} onClick={onClose}>
+          <Icon icon='close'/>
+        </span>
+      }
+    </div>;
   };
 }
+
+Alert.Detail = Detail;
+
+export default Alert;

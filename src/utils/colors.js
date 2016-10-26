@@ -2,7 +2,7 @@
 
 const Color = require('color');
 
-const functionsToMap = ['darken', 'lighten'];
+const functionsToMap = ['darken', 'lighten', 'lightness'];
 const functions = {};
 
 for (let key of functionsToMap) {

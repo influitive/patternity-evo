@@ -1,42 +1,82 @@
+/*eslint max-len: 0*/
 import devboard from 'devboard';
 import React from 'react';
 import Alert from './index.js';
 
-const devcard = devboard.ns('alerts');
+const devcard = devboard.ns('alert');
 
 devcard(
-  'Alerts',
-  `
-  Patternity Alerts
+  'Basic Alert (default)',
+  '',
+  <Alert>
+    Nothing special
+  </Alert>
+);
 
-  * success
-  * error
-  * info
-  * warning
-  `,
-  <div style={{ textAlign: 'center' }}>
-    <Alert type='success' showAlert={true}>Success</Alert>
-    <Alert type='error'>Error</Alert>
-    <Alert type='info'>Info</Alert>
-    <Alert type='warning'>Warning</Alert>
-  </div>
+devcard(
+  'Closeable Alert (default)',
+  '',
+  <Alert onClose={()=>console.log('yo')}>
+    Nothing special
+  </Alert>
+);
+
+devcard(
+  'Basic Closable Alert (warning)',
+  '',
+  <Alert type='warning' onClose={()=>console.log('yo')}>
+    Nothing special
+  </Alert>
+);
+
+devcard(
+  'Alert (success)',
+  '',
+  <Alert type='success' showIcon={true} title='Your title here' onClose={()=>console.log('yo')}>
+  </Alert>
 );
 
 
 devcard(
-  'Alerts with close',
-  ' ',
-  <div style={{ textAlign: 'center' }}>
-    <Alert type='success' showAlert={true} closeable={true}>Closable</Alert>
-  </div>
+  'Basic Closable Alert with Title',
+  '',
+  <Alert type='error' title='Your title here' onClose={()=>console.log('yo')}>
+    Nothing special
+  </Alert>
+);
+
+devcard(
+  'Alert with Icon',
+  '',
+  <Alert type='error' showIcon={true} title='Your title here' onClose={()=>console.log('yo')}>
+    Nothing special
+  </Alert>
 );
 
 
 devcard(
-  'Alerts with title and close',
-  ' ',
-  <div style={{ textAlign: 'center' }}>
-    <Alert type='success' showAlert={true} closeable={true} title='This is a title'>This is the body</Alert>
-  </div>
+  'Alert with Action',
+  '',
+  <Alert type='error' showIcon={true} title='Your title here' action={{ action: ()=>{}, title: 'Action!' }}>
+    Nothing special
+  </Alert>
+);
+
+devcard(
+  'Alert with Action and close',
+  '',
+  <Alert type='error' showIcon={true} title='Your title here' onClose={()=>console.log('yo')} action={{ action: ()=>{}, title: 'Action!' }}>
+    Nothing special
+  </Alert>
+);
+
+devcard(
+  'Alert with Details',
+  '',
+  <Alert type='error' showIcon={true} title='Your title here' onClose={()=>console.log('yo')}>
+    <Alert.Detail title='Subtile!' action={
+      <div>Somethin</div>
+    }/>
+  </Alert>
 );
 

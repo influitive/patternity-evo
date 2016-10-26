@@ -1,0 +1,22 @@
+.nextPage, .previousPage, .pageElement {
+  &:not(.disabled) {
+    cursor: pointer;
+  }
+}
+
+.pageElement {
+  padding: 0px 5px;
+}
+
+.disabled {
+  color: black;
+}
+
+.pagerSelected {
+  color: black;
+}
+
+.previousPage, .nextPage {
+  font-size: 16px;
+  vertical-align: middle;
+}
