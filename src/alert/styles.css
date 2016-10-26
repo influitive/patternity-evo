@@ -1,10 +1,13 @@
+$background-lightness: 95;
+$text-lightness: 30;
+$text-hover-lightness: 55;
 
 .alert {
   padding: 10px 20px;
   border-radius: 2px;
-  background-color: lighten($info-color, 0.95);
+  background-color: lightness($info-color, $background-lightness);
   display: flex;
-  color: $info-color;
+  color: lightness($info-color, $text-lightness);
 
   h4 {
     margin: 0px;
@@ -28,13 +31,12 @@
   }
 
   .close {
-    color: $info-color;
     cursor: pointer;
     font-weight: bold;
     z-index: 3;
 
     &:hover {
-      color: darken($info-color, 0.10);
+      color: lightness($info-color, $text-hover-lightness);
       transition: color 0.5s ease-out;
     }
   }
@@ -44,75 +46,69 @@
   }
 
   &.warning {
-    background-color: lighten($warning-color, 0.45);
-    color: darken($warning-color, 0.10);
+    background-color: lightness($warning-color, $background-lightness);
+    color: lightness($warning-color, $text-lightness);
 
     .close {
-      color: darken($warning-color, 0.10);
-
       &:hover {
-        color: darken($warning-color, 0.15);
+        color: lightness($warning-color, $text-hover-lightness);
       }
     }
 
     .action {
       button {
-        border-color: darken($warning-color, 0.1);
-        color: darken($warning-color, 0.1) !important;
+        border-color: lightness($warning-color, $text-lightness);
+        color: lightness($warning-color,  $text-lightness) !important;
 
         &:hover {
-          border-color: darken($warning-color, 0.15);
-          color: darken($warning-color, 0.15) !important;
+          border-color: lightness($warning-color, $text-hover-lightness);
+          color: lightness($warning-color, $text-hover-lightness) !important;
         }
       }
     }
   }
 
   &.success {
-    background-color: lighten($success-color, 0.4);
-    color: darken($success-color, 0.15);
+    background-color: lightness($success-color, $background-lightness);
+    color: lightness($success-color, $text-lightness);
 
     .close {
-      color: darken($success-color, 0.15);
-
       &:hover {
-        color : darken($success-color, 0.1);
+        color : lightness($success-color, $text-hover-lightness);
       }
     }
 
     .action {
       button {
-        border-color: darken($success-color, 0.15);
-        color: darken($success-color, 0.15) !important;
+        border-color: lightness($success-color, $text-lightness);
+        color: lightness($success-color, $text-lightness) !important;
 
         &:hover {
-          border-color: darken($success-color, 0.1);
-          color: darken($success-color, 0.1) !important;
+          border-color: lightness($success-color, $text-hover-lightness);
+          color: lightness($success-color, $text-hover-lightness) !important;
         }
       }
     }
   }
 
   &.error {
-    background-color: lighten($error-color, 0.4);
-    color: $error-color;
+    background-color: lightness($error-color, $background-lightness);
+    color: lightness($error-color, $text-lightness);
 
     .close {
-      color: $error-color;
-
       &:hover {
-        color : darken($error-color, 0.1);
+        color : lightness($error-color, $text-hover-lightness);
       }
     }
 
     .action {
       button {
-        border-color: $error-color;
-        color: $error-color !important;
+        border-color: lightness($error-color, $text-lightness);
+        color: lightness($error-color, $text-lightness) !important;
 
         &:hover {
-          border-color: darken($error-color, 0.1);
-          color: darken($error-color, 0.1) !important;
+          border-color: lightness($error-color, $text-hover-lightness);
+          color: lightness($error-color, $text-hover-lightness) !important;
         }
       }
     }
@@ -122,12 +118,12 @@
     margin-left: 10px;
     margin-right: 10px;
     button {
-      border-color: $info-color;
-      color: $info-color !important;
+      border-color: lightness($info-color, $text-lightness);
+      color: lightness($info-color, $text-lightness) !important;
 
       &:hover {
-        border-color: lighten($info-color, 0.02);
-        color: lighten($info-color, 0.02) !important;
+        border-color: lightness($info-color, $text-hover-lightness);
+        color: lightness($info-color, $text-hover-lightness) !important;
       }
     }
   }

@@ -14,12 +14,28 @@ devcard(
 );
 
 devcard(
-  'Basic Closable Alert (warning)',
+  'Closeable Alert (default)',
   '',
-  <Alert type='warning' closeable={true} onClose={()=>console.log('yo')}>
+  <Alert onClose={()=>console.log('yo')}>
     Nothing special
   </Alert>
 );
+
+devcard(
+  'Basic Closable Alert (warning)',
+  '',
+  <Alert type='warning' onClose={()=>console.log('yo')}>
+    Nothing special
+  </Alert>
+);
+
+devcard(
+  'Alert (success)',
+  '',
+  <Alert type='success' showIcon={true} title='Your title here' onClose={()=>console.log('yo')}>
+  </Alert>
+);
+
 
 devcard(
   'Basic Closable Alert with Title',
