@@ -1,6 +1,6 @@
 $background-lightness: 95;
-$text-lightness: 30;
-$text-hover-lightness: 55;
+$text-lightness: 45;
+$text-hover-lightness: 65;
 
 .alert {
   padding: 10px 20px;
