@@ -24,8 +24,7 @@ class Alert extends Component {
   static defaultProps = {
     title:     '',
     type:      'info',
-    showIcon:  false,
-    show: true
+    showIcon:  false
   };
 
   icon = () => typeToIconMap[this.props.type] || 'alert-caution';
