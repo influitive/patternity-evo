@@ -22,6 +22,14 @@ devcard(
 );
 
 devcard(
+  'Alert with bottom aligned action',
+  '',
+  <Alert showIcon={true} title='Your title here' action={{ action: ()=>{}, title: 'Action!', position: 'bottom' }} onClose={()=>console.log('yo')} >
+     Nothing to see here
+  </Alert>
+);
+
+devcard(
   'Basic Closable Alert (warning)',
   '',
   <Alert type='warning' onClose={()=>console.log('yo')}>
@@ -58,7 +66,8 @@ devcard(
   'Alert with Action',
   '',
   <Alert type='error' showIcon={true} title='Your title here' action={{ action: ()=>{}, title: 'Action!' }}>
-    Nothing special
+     A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here. A really really long thing goes here.
+
   </Alert>
 );
 
@@ -79,4 +88,3 @@ devcard(
     }/>
   </Alert>
 );
-

@@ -18,7 +18,11 @@ class Alert extends Component {
     type:      PropTypes.oneOf(['success', 'error', 'info', 'warning']),
     showIcon:  PropTypes.bool,
     onClose:   PropTypes.func,
-    action:    PropTypes.object
+    action:    PropTypes.shape({
+      onClick:  PropTypes.func.isRequired,
+      title:    PropTypes.string.isRequired,
+      position: PropTypes.oneOf(['right', 'bottom'])
+    })
   };
 
   static defaultProps = {
@@ -35,6 +39,14 @@ class Alert extends Component {
       styles[this.props.type]
     );
 
+  contentClasses = () =>
+    cn(
+      styles.content,
+      {
+        [styles.verticalLayout]: this.props.action &&  this.props.action.position === 'bottom'
+      }
+    );
+
   render = () => {
     const { onClose, title, children, showIcon, action } = this.props;
 
@@ -44,7 +56,7 @@ class Alert extends Component {
           <Icon icon={this.icon()}/>
         </span>
       }
-      <div className={styles.content}>
+      <div className={this.contentClasses()}>
         <div className={styles.titleAndBody}>
           {title &&
             <h4>

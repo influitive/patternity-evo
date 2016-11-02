@@ -23,6 +23,14 @@ $text-hover-lightness: 65;
     .titleAndBody {
       flex: 2;
     }
+
+    &.verticalLayout {
+      flex-direction: column;
+
+      .action {
+        padding-top: 0.75rem;
+      }
+    }
   }
 
   .icon {
@@ -114,9 +122,15 @@ $text-hover-lightness: 65;
     }
   }
 
+
+
   .action {
     margin-left: 10px;
     margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
     button {
       border-color: lightness($info-color, $text-lightness);
       color: lightness($info-color, $text-lightness) !important;
@@ -144,22 +158,6 @@ $text-hover-lightness: 65;
     a {
       text-decoration: none;
       color: $info-color;
-    }
-  }
-}
-
-@media only screen and (max-width : 480px) {
-  .alertMsg {
-    .alertAction {
-      bottom: 15px;
-      left: 46px;
-      right: auto;
-      top: auto;
-
-      & + .alertBody {
-        padding-right: 0px;
-        padding-bottom: 50px;
-      }
     }
   }
 }
