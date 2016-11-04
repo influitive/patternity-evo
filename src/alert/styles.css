@@ -25,7 +25,7 @@ $text-hover-lightness: 65;
     }
 
     &.verticalLayout {
-      flex-direction: column;
+      display: block;
 
       .action {
         padding-top: 0.75rem;
