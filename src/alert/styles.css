@@ -29,6 +29,7 @@ $text-hover-lightness: 65;
 
       .action {
         padding-top: 0.75rem;
+        padding-bottom: 0.5rem;
       }
     }
   }
