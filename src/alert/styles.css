@@ -133,8 +133,8 @@ $text-hover-lightness: 65;
     display: flex;
 
     button {
-      background-color: unset;
-      box-shadow: unset;
+      background-color: transparent;
+      box-shadow: none;
       border-color: lightness($info-color, $text-lightness);
       color: lightness($info-color, $text-lightness) !important;
 
