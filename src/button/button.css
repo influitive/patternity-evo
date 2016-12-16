@@ -26,6 +26,7 @@
     span:before {
       vertical-align: bottom;
     }
+    padding-right: 0.3rem;
   }
 }
 

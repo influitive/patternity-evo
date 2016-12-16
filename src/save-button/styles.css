@@ -1,0 +1,7 @@
+.flashing {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  50% { opacity: 0 }
+}

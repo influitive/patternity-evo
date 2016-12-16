@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import classNames from 'classnames';
+import cn from 'classnames';
 import jss from 'jss';
 import nested from 'jss-nested';
 
@@ -21,7 +21,8 @@ export class Button extends Component {
     isSubmit:  PropTypes.bool,
     style:     PropTypes.object,
     classList: PropTypes.string,
-    theme:     PropTypes.object
+    theme:     PropTypes.object,
+    iconClass: PropTypes.string
   };
 
   static defaultProps = {
@@ -31,7 +32,8 @@ export class Button extends Component {
     isSubmit:  false,
     classList: null,
     theme: {},
-    type:  'default'
+    type:  'default',
+    iconClass: ''
   };
 
   render() {
@@ -49,7 +51,7 @@ export class Button extends Component {
   _getClasses = () => {
     const { disabled, classList, type, theme } = this.props;
 
-    return classNames(
+    return cn(
       styles[this._determineButtonClass()],
       {
         disabled
@@ -75,7 +77,7 @@ export class Button extends Component {
     if (this.props.icon === '') return null;
 
     return (
-      <span className={styles.icon}>
+      <span className={cn(styles.icon, this.props.iconClass)}>
         <Icon icon={this.props.icon} />
       </span>
     );
