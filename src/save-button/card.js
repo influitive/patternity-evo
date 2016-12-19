@@ -24,3 +24,8 @@ devcard(
   'Error',
   <SaveButton saveStatus='error'/>
 );
+
+devcard(
+  'Custom Unsaved Text',
+  <SaveButton customText={{ unsaved: 'Save Changes' }} saveStatus='unsaved'/>
+);

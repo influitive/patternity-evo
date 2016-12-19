@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { compose, setPropTypes, withProps, setDisplayName } from 'recompose';
 import Button from '../button';
-import { merge, mergeWith } from 'ramda';
+import { merge, mergeWith, map, pipe } from 'ramda';
 import styles from './styles.css';
 
 const defaultButtonState = {
@@ -11,7 +11,12 @@ const defaultButtonState = {
   'saving':  { text: 'Saving', type: 'primary', icon: 'circle-empty' }
 };
 
-const shallowMergeWithDefault = mergeWith(merge, defaultButtonState);
+const prepareForMerge = map(value => ({ text: value }))
+
+const mergeWithText = pipe(
+  prepareForMerge,
+  mergeWith(merge, defaultButtonState)
+);
 
 const enhance = compose(
   setDisplayName('SaveButton'),
@@ -28,7 +33,7 @@ const enhance = compose(
     })
   }),
   withProps(({ customText = {}, saveStatus }) => ({
-    status: shallowMergeWithDefault(customText)[saveStatus],
+    status: mergeWithText(customText)[saveStatus],
     iconClass: saveStatus === 'saving' ? styles.flashing : ''
   }))
 );
