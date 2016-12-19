@@ -55,7 +55,7 @@
     "eslint-config-reforge": "^1.0.0",
     "express": "4.13.4",
     "file-loader": "0.8.5",
-    "glob": "7.0.3",
+    "glob": "7.0.5",
     "glob-fs": "0.1.6",
     "gulp": "3.9.1",
     "gulp-postcss": "6.1.0",
