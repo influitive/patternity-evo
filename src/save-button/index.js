@@ -11,7 +11,7 @@ const defaultButtonState = {
   'saving':  { text: 'Saving', type: 'primary', icon: 'circle-empty' }
 };
 
-const prepareForMerge = map(value => ({ text: value }))
+const prepareForMerge = map(value => ({ text: value }));
 
 const mergeWithText = pipe(
   prepareForMerge,
