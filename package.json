@@ -78,7 +78,7 @@
     "tap-spec": "4.1.1",
     "tape": "4.5.1",
     "tape-babel-css-modules": "^1.2.1",
-    "tape-catch": "1.0.4",
+    "tape-catch": "1.0.6",
     "url-loader": "0.5.7",
     "webpack": "1.12.14"
   }
