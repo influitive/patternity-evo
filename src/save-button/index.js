@@ -38,14 +38,12 @@ const enhance = compose(
   }))
 );
 
-export default enhance(({ status, onClick, disabled, iconClass }) =>
+export default enhance(({ status, ...rest }) =>
   <span>
     <Button
-      disabled={disabled}
-      onClick={onClick}
+      {...rest}
       type={status.type}
-      icon={status.icon}
-      iconClass={iconClass}>
+      icon={status.icon} >
       {status.text}
     </Button>
   </span>
