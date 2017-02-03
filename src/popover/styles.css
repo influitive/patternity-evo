@@ -19,7 +19,8 @@
 
 .main {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
 }
 
 .arrow {
