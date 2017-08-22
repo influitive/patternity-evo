@@ -27,6 +27,7 @@
   .icon {
     span:before {
       vertical-align: bottom;
+      height: 14px;
     }
     padding-right: 0.3rem;
   }
