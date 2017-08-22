@@ -5,6 +5,7 @@ import Button from './index.js';
 
 const devcard = devboard.ns('buttons');
 
+
 devcard(
   'Buttons',
   `
@@ -18,7 +19,7 @@ devcard(
   * text
   * default
   `,
-  <div style={{ textAlign: 'center' }}>
+  <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', flexWrap: 'wrap' }}>
     <Button type="primary" icon="speech">Primary</Button>
     <Button type="secondary" disabled={true}>Secondary</Button>
     <Button type="important">Important</Button>
@@ -31,7 +32,9 @@ devcard(
 
 // Themed Button
 class Container extends Component {
-  render() { return <div style={{ textAlign: 'center' }}>{this.props.children}</div>; }
+  render() { return <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', flexWrap: 'wrap' }}>
+    {this.props.children}
+  </div>; }
 }
 
 devcard(

@@ -10,11 +10,9 @@ export default function(theme) {
   return {
     primary: {
       'background-color': themeColorPrimary,
-      'border-color': darken(themeColorPrimary, .1),
-      'box-shadow': `0px 2px ${darken(themeColorPrimary, .1)}`,
+      'border-color': themeColorPrimary,
       '&:hover': {
-        'background-color': lighten(themeColorPrimary, .1),
-        'box-shadow': `0px 2px ${themeColorPrimary}`
+        'background-color': lighten(themeColorPrimary, .1)
       }
     },
     secondary: {
