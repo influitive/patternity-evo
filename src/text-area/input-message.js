@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styles from '../shared/form-styles.css';
 
@@ -17,10 +18,10 @@ const InputMessage = ({
 };
 
 InputMessage.propTypes = {
-  message: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.node,
-    React.PropTypes.array
+  message: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+    PropTypes.array
   ])
 };
 
