@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { compose, setPropTypes, withProps, setDisplayName } from 'recompose';
 import Button from '../button';
+import PropTypes from 'prop-types';
 import { merge, mergeWith, map, pipe } from 'ramda';
 import styles from './styles.css';
 
