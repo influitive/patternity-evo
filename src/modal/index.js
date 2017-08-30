@@ -1,92 +1,61 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
+import { compose, setPropTypes, defaultProps, setDisplayName } from 'recompose';
 
 import BsModal from 'react-bootstrap/lib/Modal';
 
-import classes from './modal.css';
+import styles from './modal.css';
 
-export default class Modal extends Component {
-  static displayName = 'Modal';
+const withModalProps = child => React.cloneElement(child, {
+  closeable: this.props.closeable,
+  onClose: this.props.onClose
+});
 
-  static propTypes = {
-    class:         PropTypes.string,
-    closeable:     PropTypes.bool,
-    size:          PropTypes.oneOf(['small', 'large']),
-    onClose:       PropTypes.func,
-    keyboard:      PropTypes.bool,
-    animate:       PropTypes.bool
-  }
+const Children = ({ children }) => React.Children.map(
+  children,
+  child => child.type === Header ? withModalProps(child) : child
+);
 
-  static defaultProps = {
-    class:         '',
-    closeable:     true,
-    size:          'large',
-    onClose:       () => {},
-    keyboard:      true,
-    animate:       false
-  }
+export default (props) => compose(
+  defaultProps({
+    className: '',
+    closeable: true,
+    size: 'large',
+    onClose: () => {},
+    keyboard: true,
+    animate: false
+  }),
+  setDisplayName('Modal'),
+  setPropTypes({
+    className: PropTypes.string,
+    closeable: PropTypes.bool,
+    size: PropTypes.oneOf(['small', 'large']),
+    onClose: PropTypes.func,
+    keyboard: PropTypes.bool,
+    animate: PropTypes.bool
+  })
+)((
+  <BsModal
+    show={true}
+    onHide={props.onClose}
+    keyboard={props.keyboard}
+    animation={props.animate}
+    autoFocus={true}
+    backdrop={props.closeable ? true : 'static'}
+    bsSize={props.size}
+    dialogClassName={props.className + ' ' + styles.__modal}>
+    <Children>{props.children}</Children>
+  </BsModal>
+));
 
-  render() {
-    return (
-      <BsModal
-        show={true}
-        onHide={this.props.onClose}
-        keyboard={this.props.keyboard}
-        animation={this.props.animate}
-        autoFocus={true}
-        backdrop={this._backdrop()}
-        bsSize={this.props.size}
-        dialogClassName={this.props.class + ' ' + classes.__modal}>
-        {this._renderChildren()}
-      </BsModal>
-    );
-  }
-
-  _backdrop() {
-    return this.props.closeable ? true : 'static';
-  }
-
-  _renderChildren() {
-    return React.Children.map(this.props.children,
-      (child) => {
-        if (child.type === Header) {
-          return React.cloneElement(child, {
-            closeable: this.props.closeable,
-            onClose: this.props.onClose
-          });
-        }
-
-        return child;
-      }
-    );
-  }
-}
-
-export const Header = ({ children, closeable, onClose }) => {
-  return (
-    <BsModal.Header closeButton={closeable} onHide={onClose}>
-      <BsModal.Title>{children}</BsModal.Title>
-    </BsModal.Header>
-  );
-};
-
-Header.propTypes = {
+export const Header = setPropTypes({
   closeable: PropTypes.bool,
   onClose: PropTypes.func
-};
+})(({ children, closeable, onClose }) => (
+  <BsModal.Header closeButton={closeable} onHide={onClose}>
+    <BsModal.Title>{children}</BsModal.Title>
+  </BsModal.Header>
+));
 
-export const Body = ({ children }) => {
-  return (
-    <BsModal.Body>
-      {children}
-    </BsModal.Body>
-  );
-};
-
-export const Footer = ({ children }) => {
-  return (
-    <BsModal.Footer>
-      {children}
-    </BsModal.Footer>
-  );
-};
+export const Body = ({ children }) => <BsModal.Body>{children}</BsModal.Body>;
+export const Footer = ({ children }) => <BsModal.Footer>{children}</BsModal.Footer>;
