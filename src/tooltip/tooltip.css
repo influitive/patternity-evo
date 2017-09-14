@@ -1,16 +1,6 @@
 .tooltip {
   position: relative;
   display: inline-block;
-  font-weight: normal;
-
-  .tooltipElement {
-    font-size: 20px;
-    color: $darker-gray;
-    vertical-align: middle;
-    cursor: pointer;
-    display: inline-block;
-    vertical-align: middle;
-  }
 
   .tooltipArrow {
     position: absolute;
