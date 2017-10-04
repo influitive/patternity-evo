@@ -108,7 +108,7 @@
       .modal-content {
         border-radius: 2px;
       }
-      .modal-backdrop.fade: {
+      .modal-backdrop.fade {
         background: $dark-gray;
       }
       .modal-backdrop.in {
