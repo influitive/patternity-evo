@@ -7,21 +7,20 @@
   display: inline-flex;
   height : 18px;
   width: 18px;
+  font-size: 12px;
+  color: $dark-gray;
+
   border: 1px solid $light-gray;
-  background-color: $lighter-gray;
+  background-color: #FFF;
   border-radius: $border-radius-2;
   vertical-align: middle;
   position: relative;
   cursor: pointer;
   justify-content: center;
   align-items: center;
-}
-
-.required-icon {
-  position: relative;
-  top: 1px;
-  left: 3px;
-  color: $error-color;
+  &:hover {
+    box-shadow: inset 0px 0px 4px -2px rgba(0,0,0,0.75);
+  }
 }
 
 .checkbox-label {
@@ -31,15 +30,9 @@
 }
 
 .disabled {
-  color: $light-gray
-}
+  background-color: $lighter-gray;
+  &:hover {
+    box-shadow: none;
+  }
 
-.indeterminate {
-  color: $dark-gray;
-  font-size: 12px;
-}
-
-.isChecked {
-  color: $dark-gray;
-  font-size: 12px;
 }
