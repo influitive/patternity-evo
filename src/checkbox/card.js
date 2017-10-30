@@ -7,7 +7,7 @@ import { ThemeProvider } from 'gild';
 const devcard = devboard.ns('Checkbox');
 
 devcard(
-  'Checkbox with label',
+  'unchecked',
   <Checkbox
     name='MyCheck'
     label='on/off'
@@ -19,7 +19,7 @@ devcard(
 );
 
 devcard(
-  'Checkbox checked no label',
+  'checked',
   <Checkbox
     name='MyCheck'
     disabled={false}
@@ -30,7 +30,7 @@ devcard(
 );
 
 devcard(
-  'Checkbox indeterminate required',
+  'indeterminate',
   <Checkbox
     name='MyCheck'
     disabled={false}
@@ -42,7 +42,30 @@ devcard(
 );
 
 devcard(
-  'Checkbox required label disabled',
+  'indeterminate and disabled',
+  <Checkbox
+    name='MyCheck'
+    disabled={true}
+    isChecked={false}
+    indeterminate={true}
+    required={true}
+    onChange={(e) => { alert(`hit button with ${e.type}`); }}
+  />
+);
+
+devcard(
+  'unchecked and disabled',
+  <Checkbox
+    name='MyCheck'
+    disabled={true}
+    isChecked={false}
+    indeterminate={false}
+    onChange={(e) => { alert(`hit button with ${e.type}`); }}
+  />
+);
+
+devcard(
+  'checked and disabled',
   <Checkbox
     name='MyCheck'
     label='is a checkbox?'
@@ -55,7 +78,7 @@ devcard(
 );
 
 devcard(
-  'Checkbox with theme',
+  'themed',
   <ThemeProvider  theme={{ borderRadius: '20px' }}>
     <Checkbox
       name='MyCheck'
