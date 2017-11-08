@@ -34,7 +34,7 @@
     "jss": "3.3.0",
     "jss-nested": "^1.0.3",
     "prop-types": "^15.5.10",
-    "ramda": "^0.22.1",
+    "ramda": "^0.25.0",
     "react-bootstrap": "^0.31.2",
     "react-jss": "2.0.1",
     "react-select": "^1.0.0-beta8",
