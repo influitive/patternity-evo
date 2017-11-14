@@ -10,7 +10,6 @@ const cx = classNames.bind(styles);
 const checkIcon = 'check';
 const indeterminateIcon = 'minus';
 
-
 // TODO: change to stateless component when gild is updated
 class Checkbox extends React.Component {
   render() {
@@ -24,8 +23,8 @@ class Checkbox extends React.Component {
         <span className={cx(
           'stylized-checkbox',
           { disabled, isChecked },
-          theme ? theme.checkBox : null
-        )}>
+          theme ? theme.checkbox : null
+        )} >
           <Icon icon={
             iconCss(indeterminate, isChecked)
           } />

@@ -1,7 +1,7 @@
-const mapPropsToCss = ({ borderRadius }) => {
+const mapPropsToCss = ({ themeColorPrimary }) => {
   return {
-    checkBox: {
-      'border-radius': borderRadius
+    checkbox: {
+      color: themeColorPrimary
     }
   };
 };

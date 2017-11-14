@@ -78,12 +78,40 @@ devcard(
 );
 
 devcard(
+  'should not change size in different font sizes',
+  <div style={{ fontSize: '30px' }}>
+    <Checkbox
+      name='MyCheck'
+      disabled={false}
+      isChecked={true}
+      indeterminate={false}
+      onChange={(e) => { alert(`hit button with ${e.type}`); }}
+    />
+  </div>
+);
+
+devcard(
   'themed',
-  <ThemeProvider  theme={{ borderRadius: '20px' }}>
+  <ThemeProvider  theme={{ themeColorPrimary: 'blue' }}>
     <Checkbox
       name='MyCheck'
       label='is a checkbox?'
       disabled={false}
+      isChecked={true}
+      indeterminate={false}
+      required={true}
+      onChange={(e) => { alert(`hit button with ${e.type}`); }}
+    />
+  </ThemeProvider>,
+);
+
+devcard(
+  'themed and disabled',
+  <ThemeProvider  theme={{ themeColorPrimary: 'blue' }}>
+    <Checkbox
+      name='MyCheck'
+      label='is a checkbox?'
+      disabled={true}
       isChecked={true}
       indeterminate={false}
       required={true}

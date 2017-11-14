@@ -7,3 +7,7 @@ gulp.task('default', function() {
     .pipe(postcss(config))
     .pipe(gulp.dest('lib/'));
 });
+
+gulp.task('watch', function() {
+  gulp.watch('./src/**/*.css', ['default']);
+});

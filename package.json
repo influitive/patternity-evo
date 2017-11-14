@@ -10,8 +10,9 @@
   "scripts": {
     "test:watch": "nodemon --quiet --exec \"npm run --silent test\" --watch src",
     "test": "BABEL_ENV=test tape-babel-css-modules \"src/**/*/*test.js\" | tap-spec",
-    "build": "rm -rf lib && gulp --silent && babel --quiet src -d lib",
-    "build:watch": "nodemon --exec \"npm run build\" --watch src",
+    "babel": "babel --quiet src -d lib",
+    "build": "rm -rf lib && gulp --silent && npm run babel",
+    "build:watch": "nodemon --exec \"npm run babel\" --watch src & gulp watch",
     "prepublish": "NODE_ENV=production npm run build",
     "start": "kotatsu serve -p 3011 -c example/webpack.config.js --progress --devtool \\#eval-source-map --babel example/index.js & npm run test:watch",
     "lint": "eslint .",
