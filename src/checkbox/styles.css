@@ -30,6 +30,7 @@
 }
 
 .disabled {
+  cursor: default;
   background-color: $lighter-gray;
   &:hover {
     box-shadow: none;
