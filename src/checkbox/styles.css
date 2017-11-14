@@ -4,6 +4,9 @@
 }
 
 .stylized-checkbox {
+  &  > span {
+    height: 24px;
+  }
   display: inline-flex;
   height : 18px;
   width: 18px;
