@@ -23,7 +23,7 @@ class Checkbox extends React.Component {
         <span className={cx(
           'stylized-checkbox',
           { disabled, isChecked },
-          theme ? theme.checkbox : null
+          theme ? theme.checkbox : styles.default
         )} >
           <Icon icon={
             iconCss(indeterminate, isChecked)
