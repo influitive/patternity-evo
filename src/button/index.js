@@ -50,13 +50,10 @@ export class Button extends Component {
   }
 
   _getClasses = () => {
-    const { disabled, classList, type, theme } = this.props;
+    const { classList, type, theme } = this.props;
 
     return cn(
       styles[this._determineButtonClass()],
-      {
-        disabled
-      },
       classList,
       theme[type]
     );

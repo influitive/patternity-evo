@@ -21,7 +21,8 @@ devcard(
   `,
   <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', flexWrap: 'wrap' }}>
     <Button type="primary" icon="speech">Primary</Button>
-    <Button type="secondary" disabled={true}>Secondary</Button>
+    <Button type="primary" disabled={true} icon="speech">Disabled</Button>
+    <Button type="secondary">Secondary</Button>
     <Button type="important">Important</Button>
     <Button type="success">Success</Button>
     <Button type="danger">Danger</Button>
@@ -47,6 +48,7 @@ devcard(
   }}>
     <Container>
       <Button type="primary">Primary</Button>
+      <Button type="primary" disabled={true} icon="speech">Disabled</Button>
       <Button type="secondary">Secondary</Button>
       <Button type="important">Important</Button>
       <Button type="success">Success</Button>

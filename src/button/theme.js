@@ -9,18 +9,18 @@ export default function(theme) {
 
   return {
     primary: {
-      'background-color': themeColorPrimary,
-      'border-color': themeColorPrimary,
+      'background-color': themeColorPrimary + '!important',
+      'border-color': themeColorPrimary + '!important',
       '&:hover': {
-        'background-color': lighten(themeColorPrimary, .1)
+        'background-color': lighten(themeColorPrimary, .1) + '!important'
       }
     },
     secondary: {
-      'border-color': themeColorPrimary,
-      'color': themeColorPrimary,
+      'border-color': themeColorPrimary + '!important',
+      'color': themeColorPrimary + '!important',
       '&:hover': {
-        'border-color': darken(themeColorPrimary, 0.2),
-        'color': darken(themeColorPrimary, 0.2)
+        'border-color': darken(themeColorPrimary, 0.2) + '!important',
+        'color': darken(themeColorPrimary, 0.2) + '!important'
       }
     }
   };

@@ -47,6 +47,7 @@
 .primary {
   composes: button;
   color: white;
+  background-color: $theme-color-primary;
 }
 
 .success {
@@ -88,8 +89,8 @@
 .secondary {
   composes: button;
   background-color: transparent;
-  border: 1px solid $medium-gray;
-  color: $medium-gray;
+  border: 1px solid $theme-color-primary;
+  color: $theme-color-primary;
   position: relative;
   transition: color 0.15s ease-in-out;
   top: 1px;
@@ -147,7 +148,7 @@
 
 .disabled {
   composes: button;
-  background-color: #cccccc;
+  background-color: #cccccc !important;
   color: #999999;
 
   &:hover,
