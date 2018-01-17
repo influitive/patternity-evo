@@ -1,0 +1,33 @@
+.container {
+  position: relative;
+  min-width: 100px;
+
+  &:global(.Select--multi) {
+    :global {
+      .Select-value {
+        border: none;
+        background-color: #1B83C3;
+      }
+    }
+  }
+
+  :global {
+    .Select-control {
+      border-radius: 3px;
+    }
+
+    .Select-menu-outer {
+      border-radius: 0;
+    }
+
+    .Select-value-icon {
+      padding: 1px 0 3px 5px;
+    }
+
+    .Select-value-label,
+    .Select-clear,
+    .Select-value-icon {
+      color: #fff;
+    }
+  }
+}

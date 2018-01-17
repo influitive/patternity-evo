@@ -3,7 +3,7 @@ import devboard from 'devboard';
 import React from 'react';
 import Loading from './index.js';
 
-const devcard = devboard.ns('Loading');
+const devcard = devboard.ns('loading');
 
 devcard(
   'LOADING',
