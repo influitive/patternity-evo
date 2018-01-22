@@ -4,7 +4,7 @@ import React from 'react';
 
 import Tooltip from './index.js';
 
-const devcard = devboard.ns('Tooltip');
+const devcard = devboard.ns('tooltip');
 
 const el = <div>Content</div>;
 devcard(

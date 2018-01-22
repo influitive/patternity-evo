@@ -4,7 +4,7 @@ import React from 'react';
 import Checkbox from './index';
 import { ThemeProvider } from 'gild';
 
-const devcard = devboard.ns('Checkbox');
+const devcard = devboard.ns('checkbox');
 
 devcard(
   'unchecked',

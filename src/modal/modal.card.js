@@ -5,7 +5,7 @@ import React from 'react';
 import Modal, { Header, Body, Footer } from './index.js';
 import { Button } from '../button';
 
-const devcard = devboard.ns('Modal');
+const devcard = devboard.ns('modal');
 
 devcard(
   'Modal',
