@@ -9,12 +9,12 @@ import cn from 'classnames';
 import styles from './typeahead.css';
 
 const Styled = compose(
-  defaultProps(() => ({
+  defaultProps({
     clearable: false,
     backspaceToRemoveMessage: '',
     searchPromptText: '',
     promptTextCreator: () => ''
-  })),
+  }),
   withProps(({ className = '', optionClassName = '' }) => ({
     className: cn(styles['container'], className),
     optionClassName: cn(styles['option'], optionClassName)
