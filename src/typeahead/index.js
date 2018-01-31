@@ -11,9 +11,7 @@ import styles from './typeahead.css';
 const Styled = compose(
   defaultProps({
     clearable: false,
-    backspaceToRemoveMessage: '',
-    searchPromptText: '',
-    promptTextCreator: () => ''
+    backspaceToRemoveMessage: ''
   }),
   withProps(({ className = '', optionClassName = '' }) => ({
     className: cn(styles['container'], className),
