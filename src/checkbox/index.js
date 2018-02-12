@@ -13,12 +13,12 @@ const indeterminateIcon = 'minus';
 // TODO: change to stateless component when gild is updated
 class Checkbox extends React.Component {
   render() {
-    const { disabled, onChange, indeterminate, isChecked, theme } = this.props;
+    const { disabled, onChange, indeterminate, isChecked, theme, className } = this.props;
 
     return (
       <div
         onClick={disabled ? null : onChange}
-        className={cx('checkbox')}>
+        className={cx('checkbox', className)}>
 
         <span className={cx(
           'stylized-checkbox',
