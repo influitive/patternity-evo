@@ -3,4 +3,6 @@ body {
   *, *:before, *:after {
     box-sizing: inherit !important;
   }
+
+  font-family: Arial, sans-serif;
 }
