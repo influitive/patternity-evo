@@ -1,84 +1,63 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { withHandlers } from 'recompose';
 import classNames from 'classnames';
 import styles from './styles.css';
 
-export default class ToggleSwitch extends Component {
-  static displayName = 'ToggleSwitch';
-
-  static propTypes = {
-    id:        PropTypes.string,
-    enabled:   PropTypes.bool,
-    isOn:      PropTypes.bool,
-    onChange:  PropTypes.func,
-    inputName: PropTypes.string
+const ToggleSwitch = withHandlers({
+  onClick: ({ onChange, value, enabled = true }) => e => {
+    e.preventDefault();
+    if (enabled) onChange(!value);
+  },
+  onToggle: ({ onChange }) => e => {
+    onChange(e.target.checked);
   }
+})(({
+  value,
+  trueLabel = 'On',
+  falseLabel = 'Off',
+  onClick,
+  onToggle,
+  className,
+  enabled = true,
+  inputProps = {},
+  changeColor = true
+}) => (
+  <div className={classNames(styles.container, { [styles.disabled]: !enabled }, className)}>
+    <div className={classNames(styles.row)} onClick={onClick}>
+      <div className={classNames(styles.falseOption, {
+        [styles.active]: !value,
+        [styles.off]: !value && changeColor
+      })}>{falseLabel}</div>
+      <div className={classNames(styles.trueOption, {
+        [styles.active]: value,
+        [styles.off]: !value && changeColor
+      })}>
+        {trueLabel}
+      </div>
+    </div>
+    <label className={styles.srOnly}>
+      {trueLabel}
+      <input
+        type="checkbox"
+        className={styles.input}
+        checked={value}
+        onChange={onToggle}
+        disabled={!enabled}
+        {...inputProps} />
+    </label>
+  </div>
+));
 
-  static defaultProps = {
-    id:        '',
-    enabled:   true,
-    isOn:      false,
-    onChange:  () => {},
-    inputName: ''
-  }
+ToggleSwitch.propTypes = {
+  value: PropTypes.bool.isRequired,
+  changeColor: PropTypes.bool,
+  trueLabel: PropTypes.string,
+  falseLabel: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  className: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]),
+  enabled: PropTypes.bool,
+  inputProps: PropTypes.object
+};
 
-  state = { isOn: this.props.isOn }
-
-  componentWillReceiveProps(newProps) {
-    this.setState({
-      isOn: newProps.isOn
-    });
-  }
-
-  checkbox = null;
-
-  render() {
-    return (
-      <span id={this.props.id} className={this._switchCSSClasses()} onClick={this._clickCheckBox} >
-        <span className={styles.toggleText}>{this._toggleText()}</span>
-        <span className={styles.switch}>
-          <span className={styles.switchLine}></span>
-          <span className={styles.switchLine}></span>
-          <span className={styles.switchLine}></span>
-        </span>
-        <input type="checkbox"
-          ref={node => this.checkbox = node}
-          className={styles.toggleCheckbox}
-          checked={this._isChecked()}
-          name={this.props.inputName}
-          onChange={this._handleChange}
-          id={this.props.id} />
-      </span>
-    );
-  }
-
-  _toggleText() {
-    return this.state.isOn ? 'On' : 'Off';
-  }
-
-  _isChecked() {
-    return this.state.isOn;
-  }
-
-  _switchCSSClasses() {
-    return classNames(styles.toggleSwitch, {
-      [styles.on]:            this.state.isOn,
-      [styles.off]:           !this.state.isOn,
-      [styles.disabled]:      !this.props.enabled
-    });
-  }
-
-  _clickCheckBox = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    if (this.props.enabled) {
-      ReactDOM.findDOMNode(this.checkbox).click();
-    }
-  }
-
-  _handleChange = (event) => {
-    this.setState({ isOn: !this.state.isOn });
-    this.props.onChange(event);
-  }
-}
+export default ToggleSwitch;

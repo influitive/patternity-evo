@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import './style.css';
 const context = require.context('../src/', true, /card\.js$/);
 context.keys().forEach(function(moduleName) {
