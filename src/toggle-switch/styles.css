@@ -41,7 +41,6 @@
 
   &:before {
 	  border-radius: 17px;
-    background-color: $theme-color-primary;
     content: '';
     position: absolute;
     display: block;
