@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withHandlers } from 'recompose';
 import classNames from 'classnames';
+import { connectTheme } from 'gild';
 import styles from './styles.css';
+
+import mapping from './theme';
 
 const ToggleSwitch = withHandlers({
   onClick: ({ onChange, value, enabled = true }) => e => {
@@ -21,15 +24,16 @@ const ToggleSwitch = withHandlers({
   className,
   enabled = true,
   inputProps = {},
-  changeColor = true
+  changeColor = true,
+  theme
 }) => (
   <div className={classNames(styles.container, { [styles.disabled]: !enabled }, className)}>
     <div className={classNames(styles.row)} onClick={onClick}>
-      <div className={classNames(styles.falseOption, {
+      <div className={classNames(styles.falseOption, theme['option'], {
         [styles.active]: !value,
         [styles.off]: !value && changeColor
       })}>{falseLabel}</div>
-      <div className={classNames(styles.trueOption, {
+      <div className={classNames(styles.trueOption, theme['option'], {
         [styles.active]: value,
         [styles.off]: !value && changeColor
       })}>
@@ -57,7 +61,8 @@ ToggleSwitch.propTypes = {
   onChange: PropTypes.func.isRequired,
   className: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]),
   enabled: PropTypes.bool,
-  inputProps: PropTypes.object
+  inputProps: PropTypes.object,
+  theme: PropTypes.object
 };
 
-export default ToggleSwitch;
+export default connectTheme(mapping)(ToggleSwitch);
