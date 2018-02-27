@@ -159,16 +159,15 @@
 
 .disabled {
   composes: button;
-  background-color: #cccccc !important;
-  color: #999999;
+  background-color: $lighter-gray !important;
+  color: $medium-gray;
+  top: 0;
 
   &:hover,
   &:active {
     text-decoration: none;
     cursor: auto;
-  }
-
-  &:focus {
-    outline: none;
+    background-color: $lighter-gray;
+    color: $medium-gray;
   }
 }
