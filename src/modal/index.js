@@ -10,7 +10,7 @@ export default compose(
   setPropTypes({
     className: PropTypes.string,
     closeable: PropTypes.bool,
-    size: PropTypes.oneOf(['small', 'large']),
+    size: PropTypes.oneOf(['small', 'large', 'default']),
     onClose: PropTypes.func,
     keyboard: PropTypes.bool,
     animate: PropTypes.bool
@@ -32,7 +32,7 @@ export default compose(
     animation={animate}
     autoFocus={true}
     backdrop={closeable ? true : 'static'}
-    bsSize={size}
+    bsSize={size === 'default' ? undefined : size}
     dialogClassName={className + ' ' + styles.__modal}>
     {React.Children.map(children, child => child.type === Header
       ? React.cloneElement(child, { closeable, onClose }) : child
