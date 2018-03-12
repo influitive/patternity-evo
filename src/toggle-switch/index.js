@@ -4,6 +4,9 @@ import { withHandlers } from 'recompose';
 import classNames from 'classnames';
 import { connectTheme } from 'gild';
 import styles from './styles.css';
+import nested from 'jss-nested';
+import jss from 'jss';
+jss.use(nested());
 
 import mapping from './theme';
 
