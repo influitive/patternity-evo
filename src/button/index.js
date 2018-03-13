@@ -38,12 +38,13 @@ export class Button extends Component {
   };
 
   render() {
-    const { disabled, onClick, children, isSubmit } = this.props;
+    const { disabled, onClick, children, isSubmit, ...rest } = this.props;
 
     return <button type={isSubmit ? 'submit' : 'button'}
       disabled={disabled}
-      className={this._getClasses()}
-      onClick={onClick}>
+      onClick={onClick}
+      {...rest}
+      className={this._getClasses()}>
       {this._hasIcon()}
       {children}
     </button>;
