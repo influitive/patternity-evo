@@ -1,7 +1,7 @@
 {
   "name": "patternity-evo",
   "repository": "https://github.com/influitive/patternity-evo",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Component Library for Influitive",
   "main": "index.js",
   "files": [
