@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import cn from 'classnames';
 import jss from 'jss';
+import { omit } from 'ramda';
 import nested from 'jss-nested';
 
 import styles from './button.css';
@@ -11,6 +12,16 @@ import { connectTheme } from 'gild';
 
 import mapping from './theme';
 jss.use(nested());
+
+const clean = omit([
+  'icon',
+  'type',
+  'inverse',
+  'style',
+  'classList',
+  'theme',
+  'iconClass'
+]);
 
 export class Button extends Component {
   static propTypes = {
@@ -38,12 +49,18 @@ export class Button extends Component {
   };
 
   render() {
-    const { disabled, onClick, children, isSubmit, ...rest } = this.props;
+    const {
+      disabled,
+      onClick,
+      children,
+      isSubmit,
+      ...rest
+    } = this.props;
 
     return <button type={isSubmit ? 'submit' : 'button'}
       disabled={disabled}
       onClick={onClick}
-      {...rest}
+      {...clean(rest)}
       className={this._getClasses()}>
       {this._hasIcon()}
       {children}
