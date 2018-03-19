@@ -1,3 +1,4 @@
+import { omit } from 'ramda';
 import React from 'react';
 import { compose, setPropTypes, withProps, setDisplayName } from 'recompose';
 import Button from '../button';
@@ -18,6 +19,11 @@ const mergeWithText = pipe(
   prepareForMerge,
   mergeWith(merge, defaultButtonState)
 );
+
+const clean = omit([
+  'saveStatus',
+  'customText'
+]);
 
 const enhance = compose(
   setDisplayName('SaveButton'),
@@ -42,7 +48,7 @@ const enhance = compose(
 export default enhance(({ status, ...rest }) =>
   <span>
     <Button
-      {...rest}
+      {...clean(rest)}
       type={status.type}
       icon={status.icon} >
       {status.text}
