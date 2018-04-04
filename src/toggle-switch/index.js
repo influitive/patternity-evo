@@ -59,8 +59,8 @@ const ToggleSwitch = withHandlers({
 ToggleSwitch.propTypes = {
   value: PropTypes.bool.isRequired,
   changeColor: PropTypes.bool,
-  trueLabel: PropTypes.string,
-  falseLabel: PropTypes.string,
+  trueLabel: PropTypes.node,
+  falseLabel: PropTypes.node,
   onChange: PropTypes.func.isRequired,
   className: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]),
   enabled: PropTypes.bool,
