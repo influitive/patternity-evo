@@ -9,6 +9,7 @@ import jss from 'jss';
 jss.use(nested());
 
 import mapping from './theme';
+import { addQa } from '../utils/data-qa';
 
 const ToggleSwitch = withHandlers({
   onClick: ({ onChange, value, enabled = true }) => e => {
@@ -28,10 +29,11 @@ const ToggleSwitch = withHandlers({
   enabled = true,
   inputProps = {},
   changeColor = true,
-  theme
+  theme,
+  ...rest
 }) => (
   <div className={classNames(styles.container, { [styles.disabled]: !enabled }, className)}>
-    <div className={classNames(styles.row)} onClick={onClick}>
+    <div data-qa={addQa('toggle-control', rest)} className={classNames(styles.row)} onClick={onClick}>
       <div className={classNames(styles.falseOption, theme['option'], {
         [styles.active]: !value,
         [styles.off]: !value && changeColor
@@ -46,6 +48,7 @@ const ToggleSwitch = withHandlers({
     <label className={styles.srOnly}>
       {trueLabel}
       <input
+        data-qa={addQa('toggle-value', rest)}
         type="checkbox"
         className={styles.input}
         checked={value}

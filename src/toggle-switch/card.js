@@ -25,6 +25,7 @@ devcard(
         </div>
         <div style={{ margin: '5px' }}>
           <ToggleSwitch
+            data-qa="MYAPPNAME_toggle-that-one-thing"
             value={state.toggle2}
             trueLabel="Yes, sign me up!"
             falseLabel="No"
