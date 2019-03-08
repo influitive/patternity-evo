@@ -9,7 +9,7 @@ import jss from 'jss';
 jss.use(nested());
 
 import mapping from './theme';
-import { addQa } from '../utils/data-qa';
+import addQa from '@influitive/qa-selector';
 
 const ToggleSwitch = withHandlers({
   onClick: ({ onChange, value, enabled = true }) => e => {
