@@ -84,7 +84,19 @@ devcard(
       position='bottom'
       isOpen={true}
       style={{ borderColor: 'blue', background: 'yellow' }}>
-      This should have some shadow.
+      This should have blue border.
+    </Popover>
+  </div>
+);
+
+devcard(
+  'Border radius',
+  <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <Popover element={<a>Hola</a>}
+      position='bottom'
+      isOpen={true}
+      style={{ borderColor: 'red', background: 'yellow', borderRadius: 3 }}>
+      This should have rounded border.
     </Popover>
   </div>
 );

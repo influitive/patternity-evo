@@ -13,6 +13,7 @@ class Popover extends Component {
     onOpen:            PropTypes.func,
     style: PropTypes.shape({
       background:  PropTypes.string.isRequired,
+      borderRadius: PropTypes.number,
       borderColor(props) {
         let borderColor = props.borderColor || '';
         if (borderColor.length > 0 && /rgba/.test(props.background)) {
@@ -31,6 +32,7 @@ class Popover extends Component {
     onOpen() {},
     style: {
       borderColor: '#ccc',
+      borderRadius: 0,
       background:  '#fff'
     },
     hasShadow:          false,
@@ -78,6 +80,7 @@ class Popover extends Component {
     return {
       borderColor: '#ccc',
       background:  '#fff',
+      borderRadius: 0,
       ...this.props.style
     };
   }

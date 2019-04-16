@@ -14,21 +14,23 @@ class PopoverContent extends Component {
     shouldHaveBorder: PropTypes.bool.isRequired,
 
     style: PropTypes.shape({
-      background:  PropTypes.string.isRequired,
+      background: PropTypes.string.isRequired,
       borderColor: PropTypes.string.isRequired,
-      top:         PropTypes.any,
-      left:        PropTypes.any
+      borderRadius: PropTypes.number.isRequired,
+      top: PropTypes.any,
+      left: PropTypes.any
     }),
     hasShadow: PropTypes.bool
   }
 
   static defaultProps = {
     position: 'top',
-    style:    {
+    style: {
       borderColor: '#ccc',
-      background:  'white',
-      top:         null,
-      left:        null
+      background: 'white',
+      borderRadius: 0,
+      top: null,
+      left: null
     },
     className: '',
     hasShadow: false
@@ -59,6 +61,7 @@ class PopoverContent extends Component {
 
     return {
       border: `1px solid ${borderColor}`,
+      borderRadius: `${this.props.style.borderRadius}px`,
       background:  this.props.style.background,
       boxShadow: this.props.hasShadow ? '5px 5px 15px rgba(136, 136, 136, 0.44)' : null
     };
