@@ -14,9 +14,9 @@ class PopoverContent extends Component {
     shouldHaveBorder: PropTypes.bool.isRequired,
 
     style: PropTypes.shape({
-      background: PropTypes.string.isRequired,
-      borderColor: PropTypes.string.isRequired,
-      borderRadius: PropTypes.number.isRequired,
+      background: PropTypes.string,
+      borderColor: PropTypes.string,
+      borderRadius: PropTypes.number,
       top: PropTypes.any,
       left: PropTypes.any
     }),
