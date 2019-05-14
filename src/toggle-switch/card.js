@@ -2,6 +2,7 @@ import devboard from 'devboard';
 import React from 'react';
 import ToggleSwitch from './index.js';
 import { ThemeProvider } from 'gild';
+import { Icon } from 'infl-icons';
 
 const devcard = devboard.ns('toggleswitch');
 
@@ -14,6 +15,7 @@ devcard(
   * custom labels, active true
   * no changeColor on toggle, custom labels
   * default labels, active true, disabled
+  * custom non-string labels, active true
   `,
   ({ state, setState }) => (
     <ThemeProvider theme={{ themeColorPrimary: 'blue' }}>
@@ -45,6 +47,23 @@ devcard(
             value={state.toggle4}
             onChange={() => setState({ toggle4: !state.toggle4 })}/>
         </div>
+        <div style={{ margin: '5px' }}>
+          <ToggleSwitch
+            value={state.toggle5}
+            trueLabel={
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <Icon icon="public" />
+                &nbsp;review
+              </div>
+            }
+            falseLabel={
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <Icon icon="pencil" />
+                &nbsp;edit
+              </div>
+            }
+            onChange={() => setState({ toggle5: !state.toggle5 })}/>
+        </div>
       </div>
     </ThemeProvider>
   ),
@@ -53,7 +72,8 @@ devcard(
       toggle1: false,
       toggle2: true,
       toggle3: false,
-      toggle4: true
+      toggle4: true,
+      toggle5: true
     }
   }
 );
